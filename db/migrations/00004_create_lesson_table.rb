@@ -3,7 +3,7 @@ Sequel.migration do
       create_table(:lessons) do
         primary_key   :id
         String        :name
-        String     :description,
+        String        :description
       end
     end
   

@@ -3,8 +3,8 @@ Sequel.migration do
     create_table(:questions) do
       primary_key   :id
       String        :name
-      String        :description,
-      Int           :number,
+      String        :description
+      Int           :number
       String        :type
     end
   end
