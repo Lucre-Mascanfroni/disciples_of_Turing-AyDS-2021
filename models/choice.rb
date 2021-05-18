@@ -3,6 +3,6 @@ class Choice < Sequel::Model
     many_to_one     :question
     # Uses plural form of associated model name
     one_to_many     :outcomes
-    many_to_many    :responses
+    one_to_many      :responses
 
 end
