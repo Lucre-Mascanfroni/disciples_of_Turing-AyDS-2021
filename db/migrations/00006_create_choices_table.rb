@@ -8,7 +8,7 @@ Sequel.migration do
   end
 
   down do
-    drop_table(:questions)
+    drop_table(:choices)
   end
 end
 
