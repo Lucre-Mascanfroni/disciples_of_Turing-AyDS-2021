@@ -6,5 +6,6 @@ class Question < Sequel::Model
   def validate
      super
      validates_presence [:name, :description, :number, :type]
+     validates_unique :number
   end
 end
