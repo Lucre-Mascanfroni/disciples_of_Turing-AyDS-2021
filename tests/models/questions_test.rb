@@ -48,6 +48,14 @@ class QuestionTest < MiniTest::Unit::TestCase
      assert_equal question.valid?, true
    end
    
+    def test_question_has_many_choices
+      question = Question.create(name: 'Sky question', description: 'Is the sky blue?', number: 2, type: 'YES/NO')
+      Choice.create(text: 'YES', question_id: question.id)
+      Choice.create(text: 'NO', question_id:  question.id)
+      
+      assert_equal question.choices.count, 2
+   end
+   
    def test_question_number_must_be_unique
       #Creamos la question en la base de datos
       Question.create(name: 'Sky question', description: 'Is the sky blue?', number: 1, type: 'YES/NO')
