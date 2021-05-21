@@ -28,6 +28,6 @@ class SurveyTest < MiniTest::Unit::TestCase
     c = Career.create(name: 'Prof. en Ciencias de la Computación')
     survey.career_id = c.id
     assert_equal survey.career,c
-    
   end
+
 end
