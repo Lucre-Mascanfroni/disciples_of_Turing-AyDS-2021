@@ -22,4 +22,12 @@ class SurveyTest < MiniTest::Unit::TestCase
     Response.create(survey_id: survey.id)
     assert_equal survey.responses.count, 4
   end
+
+  def test_survey_has_one_career
+    survey = Survey.create(name: 'survey 1')
+    c = Career.create(name: 'Prof. en Ciencias de la Computación')
+    survey.career_id = c.id
+    assert_equal survey.career,c
+    
+  end
 end
