@@ -30,4 +30,13 @@ class ChoiceTest < MiniTest::Unit::TestCase
     Response.create(choice_id: choice.id)
     assert_equal choice.responses.count, 3
   end
+
+  def test_choice_has_one_question
+    clean_database
+    choice = Choice.create(text: 'Me interesa poco')
+    question = Question.create(name:"Pregunta 3",description:"¿Te interesa el deporte",number:2,type:"preferencias")
+    choice.question_id = question.id
+    assert_equal choice.question,question
+    
+  end
 end
