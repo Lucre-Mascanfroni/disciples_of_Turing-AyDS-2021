@@ -19,30 +19,75 @@ class QuestionTest < MiniTest::Unit::TestCase
    end
    
    def test_question_must_have_all_attributes_2
+     #Eliminamos los datos que esten en la base de datos
+     Outcome.dataset.destroy
+     Response.dataset.destroy
+     Survey.dataset.destroy
+     Career.dataset.destroy
+     Choice.dataset.destroy
+     Question.dataset.destroy
+     #Fin de la eliminacion   
+   
      question = Question.new(description: 'Is the sky blue?')
      
      assert_equal question.valid?, false
    end
    
    def test_question_must_have_all_attributes_3
+     #Eliminamos los datos que esten en la base de datos
+     Outcome.dataset.destroy
+     Response.dataset.destroy
+     Survey.dataset.destroy
+     Career.dataset.destroy
+     Choice.dataset.destroy
+     Question.dataset.destroy
+     #Fin de la eliminacion   
+   
      question = Question.new(number: 1);
      
      assert_equal question.valid?, false
    end
    
    def test_question_must_have_all_attributes_4
+     #Eliminamos los datos que esten en la base de datos
+     Outcome.dataset.destroy
+     Response.dataset.destroy
+     Survey.dataset.destroy
+     Career.dataset.destroy
+     Choice.dataset.destroy
+     Question.dataset.destroy
+     #Fin de la eliminacion   
+   
      question = Question.new(type: 'YES/NO')
      
      assert_equal question.valid?, false
    end
    
    def test_question_must_have_all_attributes_5
+     #Eliminamos los datos que esten en la base de datos
+     Outcome.dataset.destroy
+     Response.dataset.destroy
+     Survey.dataset.destroy
+     Career.dataset.destroy
+     Choice.dataset.destroy
+     Question.dataset.destroy
+     #Fin de la eliminacion   
+   
      question = Question.new(name: 'Sky question', description: 'Is the sky blue?', number: 1, type: 'YES/NO')
      
      assert_equal question.valid?, true
    end
    
     def test_question_has_many_choices
+     #Eliminamos los datos que esten en la base de datos
+     Outcome.dataset.destroy
+     Response.dataset.destroy
+     Survey.dataset.destroy
+     Career.dataset.destroy
+     Choice.dataset.destroy
+     Question.dataset.destroy
+     #Fin de la eliminacion    
+    
       question = Question.create(name: 'Sky question', description: 'Is the sky blue?', number: 1, type: 'YES/NO')
       Choice.create(text: 'YES', question_id: question.id)
       Choice.create(text: 'NO', question_id:  question.id)
@@ -51,6 +96,15 @@ class QuestionTest < MiniTest::Unit::TestCase
    end
    
    def test_question_has_many_responses
+     #Eliminamos los datos que esten en la base de datos
+     Outcome.dataset.destroy
+     Response.dataset.destroy
+     Survey.dataset.destroy
+     Career.dataset.destroy
+     Choice.dataset.destroy
+     Question.dataset.destroy
+     #Fin de la eliminacion   
+   
       question = Question.create(name: 'Question about personal preferences', description: 'Breaking Bad or Game of Thrones?', number: 2, type: 'Multiple choice')
       ch1 = Choice.create(text: 'Breaking Bad', question_id: question.id)
       ch2 = Choice.create(text: 'Game of Thrones', question_id: question.id)
@@ -64,6 +118,15 @@ class QuestionTest < MiniTest::Unit::TestCase
    end
    
    def test_question_number_must_be_unique
+     #Eliminamos los datos que esten en la base de datos
+     Outcome.dataset.destroy
+     Response.dataset.destroy
+     Survey.dataset.destroy
+     Career.dataset.destroy
+     Choice.dataset.destroy
+     Question.dataset.destroy
+     #Fin de la eliminacion   
+   
       Question.create(name: 'Sky question', description: 'Is the sky blue?', number: 3, type: 'YES/NO')
       assert_equal Question.new(name: 'Question for teacher', description: 'Can i go to the bathroom?', number: 3, type: 'YES/NO').valid?, false
    end
