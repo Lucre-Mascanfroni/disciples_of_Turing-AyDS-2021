@@ -3,12 +3,14 @@ require File.expand_path '../../test_helper.rb', __FILE__
 class ChoiceTest < MiniTest::Unit::TestCase
   MiniTest::Unit::TestCase
   def test_choice_must_has_text
+    clean_database
     choice = Choice.new
     choice.text = ''
     assert_equal choice.valid?, false
   end
 
   def test_choice_has_many_outcomes
+    clean_database
     question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
     choice = Choice.create(text:'estoy de acuerdo')
 
