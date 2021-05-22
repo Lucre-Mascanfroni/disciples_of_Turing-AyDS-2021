@@ -17,3 +17,12 @@ class Minitest::HooksSpec
 end
 
 require File.expand_path './app.rb'
+
+def clean_database
+Outcome.dataset.destroy
+Response.dataset.destroy
+Survey.dataset.destroy
+Career.dataset.destroy
+Choice.dataset.destroy
+Question.dataset.destroy
+end
