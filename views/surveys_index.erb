@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title> CUESTIONARIO </title>
+  </head>
+
+  <body>
+    <h1> CUESTIONARIO </h1>
+    <ul>
+        <% @questions.map do |question|%>
+        <li>
+            <p> <%= question.description %> </p>
+        </li>
+       <%end%>
+    </ul>
+  </body>
+</html>
+
