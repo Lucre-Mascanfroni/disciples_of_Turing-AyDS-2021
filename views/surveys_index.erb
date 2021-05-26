@@ -7,22 +7,25 @@
 
   <body>
     <h1> UNRC SURVEY </h1>
-    <form id = 'form' action='/responses' method='POST'>
+    <form id = 'form' action='/responses' method='POST'> <!-- Inicio del formulario -->
+    
         <ul>
-            <% @questions.map do |question| %>
-              <li> <%= question.number %> <%= question.description %> </li>
+            <% @questions.map do |question| %> <!-- Por cada pregunta -->
+              <li> <%= question.number %> <%= question.description %> </li> <!-- La mostramos -->
               <ul>
-                  <% question.choices.map do |choice| %>
-                      <input type='radio'  name='<%= question.id%>' value='<%= choice.id%>'> <%= choice.text%> </input>
+                  <% question.choices.map do |choice| %> <!-- Por cada opcion asociada a la pregunta -->
+                      <input type='radio' name='<%= question.id%>' value='<%= choice.id%>'> <%= choice.text%> </input> 
+                      <!-- Por cada opcion generamos un 'boton' para poder seleccionarla, las opciones son excluyentes -->
                   <% end %>
                   <input type='hidden' name='question_id[]' value='<%=question.id%>'>
               </ul>
             <% end %>
         </ul>
+
         <input type='hidden' name='survey_id' value='<%= @survey.id%>'>
         <button type='submit' value='submit'>
             Send
         </button>
-    </form>
+    </form> <!-- Fin del formulario -->
   </body>
 </html>
