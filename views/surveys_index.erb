@@ -6,14 +6,23 @@
   </head>
 
   <body>
-    <h1> SURVEY </h1>
-    <ul>
-        <% @questions.map do |question|%>
-        <li>
-            <p> <%= question.description %> </p>
-        </li>
-       <%end%>
-    </ul>
+    <h1> UNRC SURVEY </h1>
+    <form id = 'form' action='/responses' method='POST'>
+        <ul>
+            <% @questions.map do |question| %>
+              <li> <%= question.number %> <%= question.description %> </li>
+              <ul>
+                  <% question.choices.map do |choice| %>
+                      <input type='radio'  name='<%= question.id%>' value='<%= choice.id%>'> <%= choice.text%> </input>
+                  <% end %>
+                  <input type='hidden' name='question_id[]' value='<%=question.id%>'>
+              </ul>
+            <% end %>
+        </ul>
+        <input type='hidden' name='survey_id' value='<%= @survey.id%>'>
+        <button type='submit' value='submit'>
+            Send
+        </button>
+    </form>
   </body>
 </html>
-
