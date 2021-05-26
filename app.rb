@@ -60,5 +60,12 @@ class App < Sinatra::Base
 
     erb :careers_index
   end
+
+  post '/responses' do
+    params[:question_id].each do |q_id|
+      r = Response.new(choice_id: params[:"#{q_id}"], survey_id: params[:survey_id], question_id: q_id)
+      r.save
+    end
+  end
 end
 
