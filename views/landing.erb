@@ -1,18 +1,18 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8"/>
     <title> HOMEPAGE </title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
 
   <body>
     <h1> ~WELCOME~ </h1>
 
-    <p> Do u wanna make a survey boy? </p>
-    <p> Give me your username and let's get started </p>
-
     <form action='/surveys' method='POST'>
-      <input type='text' name='name', value='name'>
+      <div> <p> Do u wanna make a survey, boy? </p>
+            <p> Give me your username and let's get started! </p> 
+      </div>
+      <input type='text' name='Enter your name', value='Enter your name'>
       <input type='submit' value='Submit'>
     </form>
   </body>  
