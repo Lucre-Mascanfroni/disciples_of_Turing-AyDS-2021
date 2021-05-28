@@ -71,6 +71,11 @@ class App < Sinatra::Base
     erb :careers_index
   end
 
+  get '/careers/:id' do
+    @career = Career.where(id: params['id']).last
+    erb :careers_id_index
+  end
+
   post '/responses' do
     params[:question_id].each do |q_id|
       r = Response.new(choice_id: params[:"#{q_id}"], survey_id: params[:survey_id], question_id: q_id)
