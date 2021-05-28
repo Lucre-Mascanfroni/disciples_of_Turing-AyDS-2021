@@ -31,12 +31,23 @@ class App < Sinatra::Base
   end
   
   post "/careers" do
-    career = Career.new(name: params[:name])
+    career_name = params[:name]
+    action = params[:action]
     
-    if career.save
-       [201, {'Location' => "career/#{career.id}"}, 'CREATED']
+    if action == 'create'
+       career = Career.new(name: career_name)
+       if career.save
+        redirect '/careers'
+       else
+        [500, {}, 'Internal Server Error']
+       end
     else
-       [500, {}, 'Internal Server Error']
+       career = Career.where(name: career_name).last
+       if !career.nil? && career.destroy
+         redirect '/careers'
+       else
+         [500, {}, 'Internal Server Error']
+       end
     end
   end
 
@@ -57,7 +68,6 @@ class App < Sinatra::Base
   
   get '/careers' do
     @careers = Career.all
-
     erb :careers_index
   end
 
