@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8"/>
@@ -7,15 +6,16 @@
 
   <body>
     <h1> UNRC SURVEY </h1>
-    <form id = 'form' action='/responses' method='POST'> <!-- Inicio del formulario -->
+    <form id = 'form' action='/responses' method='POST'> <!-- Form start -->
     
         <ul>
             <% @questions.map do |question| %> <!-- Por cada pregunta -->
-              <li> <%= question.number %> <%= question.description %> </li> <!-- La mostramos -->
+              <li> <%= question.number %> <%= question.description %> </li> <!-- Display the question -->
               <ul>
-                  <% question.choices.map do |choice| %> <!-- Por cada opcion asociada a la pregunta -->
+                  <% question.choices.map do |choice| %> <!-- For each choice of the question -->
                       <input type='radio' name='<%= question.id%>' value='<%= choice.id%>'> <%= choice.text%> </input> 
-                      <!-- Por cada opcion generamos un 'boton' para poder seleccionarla, las opciones son excluyentes -->
+                      <!-- For each choice we generate a 'button' to be able to select it, the options are exclusive -->
+                      <!-- For the moment we assume that the choices are exclusive -->
                   <% end %>
                   <input type='hidden' name='question_id[]' value='<%=question.id%>'>
               </ul>
@@ -26,6 +26,6 @@
         <button type='submit' value='submit'>
             Send
         </button>
-    </form> <!-- Fin del formulario -->
+    </form> <!-- Form end -->
   </body>
 </html>

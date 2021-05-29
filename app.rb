@@ -29,14 +29,22 @@ class App < Sinatra::Base
        else
         [500, {}, 'Internal Server Error']
        end
-    else
+    elsif action == 'delete'
        career = Career.where(name: career_name).last
-       #maybe the career does not exist in the system, so I ask if it is not nil
-       if !career.nil? && career.destroy
+       #if the career exists and does not have associated surveys we try to destroy it
+       if !career.nil? && career.surveys.empty? && career.destroy
          redirect '/careers' #if the career was deleted successfully, we redirect to '/careers'
        else
          [500, {}, 'Internal Server Error']
        end
+    else
+      career = Career.find(id: params[:id])
+      career.update_attribute(params[:attribute], params[:value])
+      if career.save
+        redirect "/careers/#{career.id}"
+      else
+        [500, {}, 'Internal Server Error']
+      end
     end
   end
   #End of GET and POST methods of careers
