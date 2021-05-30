@@ -68,10 +68,15 @@ class App < Sinatra::Base
 
   #POST method of responses
   post '/responses' do
+    survey = Survey.find(id: params[:survey_id])
     params[:question_id].each do |q_id|
-      r = Response.new(choice_id: params[:"#{q_id}"], survey_id: params[:survey_id], question_id: q_id)
+      r = Response.new(choice_id: params[:"#{q_id}"], survey_id: survey.id, question_id: q_id)
       r.save
     end
+
+    @career_result   = Career.find(id: survey.id_career_result(Career.all))
+    survey.career_id = @career_result
+    erb :outcome_index
   end
   #End of POST method of responses
 end
