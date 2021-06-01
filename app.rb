@@ -74,8 +74,8 @@ class App < Sinatra::Base
       r.save
     end
 
-    @career_result   = Career.find(id: survey.id_career_result(Career.all))
-    survey.career_id = @career_result
+    @career_result = Career.find(id: survey.id_career_result(Career.all))
+    survey.update_attribute('career_id', @career_result.id)
     erb :outcome_index
   end
   #End of POST method of responses

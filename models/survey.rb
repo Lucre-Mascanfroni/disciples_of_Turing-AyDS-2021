@@ -23,5 +23,10 @@ class Survey < Sequel::Model
 
         h.key(h.values.max)
     end
+
+    def update_attribute(name, value)
+		send(name.to_s + "=", value)
+		save
+	end
 end
 
