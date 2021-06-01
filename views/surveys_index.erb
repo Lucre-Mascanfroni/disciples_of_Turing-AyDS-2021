@@ -9,15 +9,20 @@
     <form id = 'form' action='/responses' method='POST'> <!-- Form start -->
     
         <ul>
-            <% @questions.map do |question| %> <!-- Por cada pregunta -->
-              <li> <%= question.number %> <%= question.description %> </li> <!-- Display the question -->
+            <% @questions.map do |question| %> <!-- For each question -->
+              <li> <%= question.number %> . <%= question.name %> </li> <!-- Display the question name --> <br>
+              <%= question.description %> <br> <!-- Display the question description -->
               <ul>
                   <% question.choices.map do |choice| %> <!-- For each choice of the question -->
-                      <input type='radio' name='<%= question.id%>' value='<%= choice.id%>'> <%= choice.text%> </input> 
+                    
+                      <input type='radio' name='<%= question.id%>' value='<%= choice.id%>'> <%= choice.text%> <br>
+
                       <!-- For each choice we generate a 'button' to be able to select it, the options are exclusive -->
                       <!-- For the moment we assume that the choices are exclusive -->
+
                   <% end %>
                   <input type='hidden' name='question_id[]' value='<%=question.id%>'>
+                  <br>
               </ul>
             <% end %>
         </ul>
