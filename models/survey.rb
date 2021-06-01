@@ -17,7 +17,7 @@ class Survey < Sequel::Model
 
         responses.each do |response|
             response.choice.outcomes.each do |outcome|
-                h[outcome.career_id] = h[outcome.career_id] + 1
+                h[outcome.career.id] = h[outcome.career.id] + 1
             end
         end
 
