@@ -10,14 +10,14 @@
     
         <ul>
             <% @questions.map do |question| %> <!-- For each question -->
-              <li> <%= question.number %> . <%= question.name %> </li> <!-- Display the question name --> <br>
-              <%= question.description %> <br> <!-- Display the question description -->
+              <li> <%= question.number %> . <%= question.name %> </li> <!-- Display name of the question --> <br>
+              <%= question.description %> <br> <!-- Display description of the question -->
               <ul>
                   <% question.choices.map do |choice| %> <!-- For each choice of the question -->
-                    
+
                       <input type='radio' name='<%= question.id%>' value='<%= choice.id%>'> <%= choice.text%> <br>
 
-                      <!-- For each choice we generate a 'button' to be able to select it, the options are exclusive -->
+                      <!-- For each choice we generate a 'button' to be able to select it -->
                       <!-- For the moment we assume that the choices are exclusive -->
 
                   <% end %>
