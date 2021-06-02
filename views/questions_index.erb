@@ -7,6 +7,17 @@
   <body>
     <h1> QUESTIONS </h1>
 
+    <form action='/questions' method='POST'>
+        <input type='text' name='name' value='question name' required> </input> <br>
+        <input type='text' name='description' value='description of the question' required> </input> <br>
+        <input type='number' name='number' id='number' min='0' required> </input> <br>
+        <select name='type'>
+            <option value='exclusive'> exclusive </option>
+        </select>
+        <input type='hidden' name='action' value='create'>
+        <input type='submit' value='Create'>
+    </form>
+
     <% @questions.map do |question| %>
         <ul>
             ID : <%= question.id %> <br>
