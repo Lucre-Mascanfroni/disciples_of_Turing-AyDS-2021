@@ -6,16 +6,14 @@
 
   <body>
     <h1> QUESTIONS </h1>
+
     <% @questions.map do |question| %>
         <ul>
-            <%= question.number %>. <%= question.name %> <br>
-            <%= question.description %>
-
-            <% question.choices.map do |choice| %>
-                <ul>
-                    <%= choice.text %> <br>
-                </ul>
-            <% end %>
+            ID : <%= question.id %> <br>
+            Name : <%= question.name %> <br>
+            Description : <%= question.description %> <br>
+            Number : <%= question.number %> <br>
+            Type : <%= question.type %> <br>
         </ul>
     <% end %>
   </body>
