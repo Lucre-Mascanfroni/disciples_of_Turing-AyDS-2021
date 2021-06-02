@@ -79,5 +79,12 @@ class App < Sinatra::Base
     erb :outcome_index
   end
   #End of POST method of responses
+
+  #GET and POST methods of questions
+  get '/questions' do
+    @questions = Question.all
+    erb :questions_index
+  end
+  #End of GET and POST method of questions
 end
 
