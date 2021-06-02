@@ -85,6 +85,14 @@ class App < Sinatra::Base
     @questions = Question.all
     erb :questions_index
   end
+
+  post '/questions' do
+    action = params[:action]
+    if action == 'create'
+      Question.create(name: params[:name], description: params[:description], number: params[:number], type: params[:type])
+    end
+    redirect '/questions'
+  end
   #End of GET and POST method of questions
 end
 
