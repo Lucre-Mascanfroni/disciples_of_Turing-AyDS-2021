@@ -15,7 +15,7 @@
               <ul>
                   <% question.choices.map do |choice| %> <!-- For each choice of the question -->
 
-                      <input type='radio' name='<%= question.id%>' value='<%= choice.id%>'> <%= choice.text%> <br>
+                      <input type='radio' name='<%= question.id%>' value='<%= choice.id%>' required> <%= choice.text%> <br>
 
                       <!-- For each choice we generate a 'button' to be able to select it -->
                       <!-- For the moment we assume that the choices are exclusive -->

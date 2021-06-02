@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title> QUESTIONS </title>
+  </head>
+
+  <body>
+    <h1> QUESTIONS </h1>
+    <% @questions.map do |question| %>
+        <ul>
+            <%= question.number %>. <%= question.name %> <br>
+            <%= question.description %>
+
+            <% question.choices.map do |choice| %>
+                <ul>
+                    <%= choice.text %> <br>
+                </ul>
+            <% end %>
+        </ul>
+    <% end %>
+  </body>
+</html>
