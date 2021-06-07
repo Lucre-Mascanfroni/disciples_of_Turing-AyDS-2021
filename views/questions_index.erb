@@ -25,6 +25,14 @@
             Description : <%= question.description %> <br>
             Number : <%= question.number %> <br>
             Type : <%= question.type %> <br>
+
+            Associated choices : <br>
+            <% question.choices.map do |choice| %>
+              <dd> 
+                ID : <%= choice.id %> <br>
+                Text : <%= choice.text %> 
+              </dd>
+            <% end %>
         </ul>
     <% end %>
   </body>
