@@ -15,22 +15,22 @@ class App < Sinatra::Base
 
   get '/careers/:id' do
     @career = Career.where(id: params['id']).last
-    erb :careers_id_index
+    erb :career_index
   end
   
   post "/careers" do
-    career_name = params[:name]
-    action = params[:action]
+    career_id = params[:id]
+    action    = params[:action]
     
     if action == 'create'
-       career = Career.new(name: career_name)
+       career = Career.new(name: params[:name])
        if career.save
         redirect '/careers' #if the career was saved successfully, we redirect to '/careers'
        else
         [500, {}, 'Internal Server Error']
        end
     elsif action == 'delete'
-       career = Career.where(name: career_name).last
+       career = Career.find(id: career_id)
        #if the career exists and does not have associated surveys we try to destroy it
        if !career.nil? && career.surveys.empty? && career.destroy
          redirect '/careers' #if the career was deleted successfully, we redirect to '/careers'
@@ -38,7 +38,7 @@ class App < Sinatra::Base
          [500, {}, 'Internal Server Error']
        end
     else
-      career = Career.find(id: params[:id])
+      career = Career.find(id: career_id)
       career.update_attribute(params[:attribute], params[:value])
       if career.save
         redirect "/careers/#{career.id}"

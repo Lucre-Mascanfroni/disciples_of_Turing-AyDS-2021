@@ -7,14 +7,16 @@
 
   <body>
     <h1> Careers information </h1>
+    <p> Create a career </p>
     <form action='/careers' method='POST'>
       <input type='text' name='name' value='career name'>
       <input type='hidden' name='action' value='create'>
       <input type='submit' value='Create'>
     </form>
 
+    <p> Delete a career by ID </p>
     <form action='/careers' method='POST'>
-      <input type='text' name='name' value='career name'>
+      <input type='numeric' name='id' value='career ID'>
       <input type='hidden' name='action' value='delete'>
       <input type='submit' value='Delete'>
     </form>
@@ -23,7 +25,8 @@
       <% @careers.map do |career|%>
         <li>
           <a href="careers/<%= career.id %>"> <%= career.name%></a>
-          (<%= career.surveys.count %>)
+          <dd> ID : <%= career.id %> </dd>
+          <dd> Associated surveys : <%= career.surveys.count %> </dd>
         </li>
       <%end%>
     </ul>

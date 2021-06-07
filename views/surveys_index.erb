@@ -15,19 +15,19 @@
               <ul>
                   <% question.choices.map do |choice| %> <!-- For each choice of the question -->
 
-                      <input type='radio' name='<%= question.id%>' value='<%= choice.id%>' required> <%= choice.text%> <br>
+                      <input type='radio' name='<%= question.id%>' value='<%= choice.id %>' required> <%= choice.text %> <br>
 
                       <!-- For each choice we generate a 'button' to be able to select it -->
-                      <!-- For the moment we assume that the choices are exclusive -->
+                      <!-- At the moment we assume that the options are single-choice questions. -->
 
                   <% end %>
-                  <input type='hidden' name='question_id[]' value='<%=question.id%>'>
+                  <input type='hidden' name='question_id[]' value='<%= question.id %>'>
                   <br>
               </ul>
             <% end %>
         </ul>
 
-        <input type='hidden' name='survey_id' value='<%= @survey.id%>'>
+        <input type='hidden' name='survey_id' value='<%= @survey.id %>'>
         <button type='submit' value='submit'>
             Send
         </button>
