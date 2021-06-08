@@ -83,8 +83,18 @@ class App < Sinatra::Base
     action = params[:action]
     if action == 'create'
       Question.create(name: params[:name], description: params[:description], number: params[:number], type: params[:type])
+      redirect '/questions'
     end
-    redirect '/questions'
+    
+    if action == 'delete'
+      question = Question.find(id: params[:id])
+      #if the question exists and does not have associated surveys we try to destroy it
+      if !question.nil? && question.choices.empty? && question.responses.empty? && question.destroy
+        redirect '/questions' #if the question was deleted successfully, we redirect to '/questions'
+      else
+        [500, {}, 'Internal Server Error']
+      end
+    end
   end
   #End of GET and POST method of questions
 end
