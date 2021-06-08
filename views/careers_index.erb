@@ -6,17 +6,17 @@
   </head>
 
   <body>
-    <h1> Careers information </h1>
+    <h1> Information about the careers </h1>
     <p> Create a career </p>
-    <form action='/careers' method='POST'>
-      <input type='text' name='name' value='career name'>
+    <form name='formCreateCareer' action='/careers' method='POST'>
+      <input type='text' name='name' placeholder='career name'>
       <input type='hidden' name='action' value='create'>
       <input type='submit' value='Create'>
     </form>
 
     <p> Delete a career by ID </p>
-    <form action='/careers' method='POST'>
-      <input type='numeric' name='id' value='career ID'>
+    <form name='formDeleteCareer' action='/careers' method='POST'>
+      <input type='numeric' name='id' placeholder='career ID'>
       <input type='hidden' name='action' value='delete'>
       <input type='submit' value='Delete'>
     </form>
