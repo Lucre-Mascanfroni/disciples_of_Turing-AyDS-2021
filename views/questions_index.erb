@@ -7,10 +7,11 @@
   <body>
     <h1> QUESTIONS </h1>
 
+    Create a question.
     <form action='/questions' method='POST'>
-        <input type='text' name='name' value='question name' required> </input> <br>
-        <input type='text' name='description' value='description of the question' required> </input> <br>
-        <input type='number' name='number' id='number' min='0' required> </input> <br>
+        <input type='text' name='name' placeholder='question name' required> </input>
+        <input type='text' name='description' placeholder='description of the question' required> </input>
+        <input type='number' name='number' id='number' placeholder='number of the question' min=0 required> </input>
         <select name='type'>
             <option value='SINGLE-CHOICE'> single-choice </option>
         </select>
@@ -18,15 +19,16 @@
         <input type='submit' value='Create'>
     </form>
 
+    Questions:
     <% @questions.map do |question| %>
         <ul>
-            ID : <%= question.id %> <br>
-            Name : <%= question.name %> <br>
-            Description : <%= question.description %> <br>
-            Number : <%= question.number %> <br>
-            Type : <%= question.type %> <br>
+            <p> ID : <%= question.id %> </p>
+            <p> Name : <%= question.name %> </p>
+            <p> Description : <%= question.description %> </p>
+            <p> Number : <%= question.number %> </p>
+            <p> Type : <%= question.type %> </p>
 
-            Associated choices : <br>
+            Associated choices : 
             <% question.choices.map do |choice| %>
               <dd> 
                 ID : <%= choice.id %> <br>
