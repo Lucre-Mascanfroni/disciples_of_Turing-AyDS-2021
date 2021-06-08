@@ -94,5 +94,16 @@ class App < Sinatra::Base
     redirect '/questions'
   end
   #End of GET and POST method of questions
+  
+  #GET and POST methods of choices
+  post '/choices' do
+    action = params[:action]
+    if action == 'create'
+      Choice.create(text: params[:text], question_id: params[:question_id])
+    end
+    redirect '/choices'
+  end
+  #End of GET and POST method of choices
+
 end
 
