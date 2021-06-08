@@ -1,6 +1,12 @@
 require './models/init.rb'
 
+require 'sinatra/base'
+require 'sinatra/flash'
+
 class App < Sinatra::Base
+  enable :sessions
+  register Sinatra::Flash
+
   #GET method of root
   get '/' do
     erb :landing
@@ -29,6 +35,7 @@ class App < Sinatra::Base
       else
         [500, {}, 'Internal Server Error']
       end
+      
     elsif action == 'delete'
       career = Career.find(id: career_id)
       #if the career exists, does not have associated surveys 
@@ -101,12 +108,16 @@ class App < Sinatra::Base
   #GET and POST methods of choices
   post '/choices' do
     action = params[:action]
-    if action == 'create'
-      Choice.create(text: params[:text], question_id: params[:question_id])
+    if action == 'create' && !Question.find(id: params[:question_id]).nil?
+      choice = Choice.new(text: params[:text], question_id: params[:question_id])
+      if choice.save
+        @questions = Question.all
+        erb :questions_index
+      else
+        'Something went wrong trying to create the option.'
+      end
     end
-    redirect '/choices'
   end
   #End of GET and POST method of choices
-
 end
 

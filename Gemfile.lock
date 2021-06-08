@@ -32,6 +32,8 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.7)
       tilt (~> 2.0)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     tilt (2.0.10)
 
 PLATFORMS
@@ -47,6 +49,7 @@ DEPENDENCIES
   rerun
   sequel
   sinatra (= 2.0.7)
+  sinatra-flash
 
 RUBY VERSION
    ruby 2.6.4p104
