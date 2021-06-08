@@ -6,10 +6,11 @@
 
   <body>
     <h1> Outcome </h1>
-      
-
-    <p> You should study <%= @career_result.name %> </p>
-    <p> Description about <%= @career_result.name %> </p>
-    <%= @career_result.full_description %>
+    <p> You should study: <%= @career_result.name %> </p>
+    <p> Description about <%= @career_result.name %>: </p>
+      <% if !@career_result.doesHaveFullDescription? %>
+        <dd> To be added. </dd>
+      <% end %>
+        <dd> <%= @career_result.full_description %> </dd>
   </body> 
 </html>
