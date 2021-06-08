@@ -8,17 +8,23 @@
     <h1> Information about the careers </h1>
     <p> Create a career </p>
     <form name='formCreateCareer' action='/careers' method='POST'>
-      <input type='text' name='name' placeholder='career name' required> </input>
-      <input type='hidden' name='action' value='create'> </input>
-      <input type='submit' value='Create'> </input>
+      <input type='text' name='name' placeholder='career name' required> 
+      <input type='hidden' name='action' value='create'> 
+      <input type='submit' value='Create'> 
     </form>
 
     <p> Delete a career by ID </p>
     <form name='formDeleteCareer' action='/careers' method='POST'>
-      <input type='number' name='id' placeholder='career ID' min=0 required> </input>
-      <input type='hidden' name='action' value='delete'> </input>
-      <input type='submit' value='Delete'> </input>
+      <input type='number' name='id' placeholder='career ID' min=0 required> 
+      <input type='hidden' name='action' value='delete'> 
+      <input type='submit' value='Delete'> 
     </form>
+
+    <% if flash[:error] then %>
+      <div class="flash">
+        <%= flash[:error] %>
+      </div>
+    <% end %>
 
     <ul>
       <% @careers.map do |career|%>

@@ -14,19 +14,19 @@
 
       <%= @career.full_description %>
       <form name='formFullDescription' action='/careers' method='POST'>
-        <input type='text'   name='value' value='Full description'> </input>
-        <input type='hidden' name='action' value='update'> </input>
-        <input type='hidden' name='attribute' value='full_description'> </input>
-        <input type='hidden' name='id' value='<%= @career.id %>'> </input>
-        <input type='submit' value='Add/Update description'> </input>
+        <input type='text'   name='value' placeholder='full description'> 
+        <input type='hidden' name='action' value='update'> 
+        <input type='hidden' name='attribute' value='full_description'> 
+        <input type='hidden' name='id' value='<%= @career.id %>'> 
+        <input type='submit' value='Add/Update description'> 
       </form>
 
       <form name='formCareerName' action='/careers' method='POST'>
-        <input type='text'   name='value' value='Career name'> </input>
-        <input type='hidden' name='action' value='update'> </input>
-        <input type='hidden' name='attribute' value='name'> </input>
-        <input type='hidden' name='id' value='<%= @career.id %>'> </input>
-        <input type='submit' value='Update name'> </input>
+        <input type='text'   name='value' placeholder='career name'> 
+        <input type='hidden' name='action' value='update'> 
+        <input type='hidden' name='attribute' value='name'> 
+        <input type='hidden' name='id' value='<%= @career.id %>'> 
+        <input type='submit' value='Update name'> 
       </form>
   </body>
 </html>

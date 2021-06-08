@@ -7,22 +7,23 @@
   <body>
     <h1> QUESTIONS </h1>
 
-    Create a question.
-    <form action='/questions' method='POST'>
-        <input type='text' name='name' placeholder='question name' required> </input>
-        <input type='text' name='description' placeholder='description of the question' required> </input>
-        <input type='number' name='number' id='number' placeholder='number of the question' min=0 required> </input>
-        <select name='type'>
-            <option value='SINGLE-CHOICE'> single-choice </option>
-        </select>
-        <input type='hidden' name='action' value='create'>
-        <input type='submit' value='Create'>
+    <p> Create a question. </p>
+    <form name='formCreateQuestion' action='/questions' method='POST'>
+      <input type='text' name='name' placeholder='question name' required>
+      <input type='text' name='description' placeholder='description of the question' required>
+      <input type='number' name='number' id='number' placeholder='number of the question' min=0 required>
+      <select name='type'>
+          <option value='SINGLE-CHOICE'> single-choice </option>
+      </select>
+      <input type='hidden' name='action' value='create'>
+      <input type='submit' value='Create'>
     </form>
+
     <p> Delete a question by ID </p>
-      <form action='/questions' method='POST'>
-      <input type='number' name='id' value='question ID'>
-      <input type='hidden' name='action' value='delete'>
-      <input type='submit' value='Delete'>
+      <form name='formDeleteQuestion' action='/questions' method='POST'>
+        <input type='number' name='id' placeholder='question ID' min=0 required>
+        <input type='hidden' name='action' value='delete'>
+        <input type='submit' value='Delete'>
     </form>
 
     <p> Create a choice </p>
