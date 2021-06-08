@@ -18,6 +18,13 @@
         <input type='hidden' name='action' value='create'>
         <input type='submit' value='Create'>
     </form>
+    <p> Create a choice </p>
+    <form name='formCreateChoice' action='/choices' method='POST'>
+      <input type='text' name='text' placeholder='choice text' required>
+      <input type='number' name='question_id' placeholder='id of the associated question' min=0 required>
+      <input type='hidden' name='action' value='create'>
+      <input type='submit' value='Create'>
+    </form>
 
     Questions:
     <% @questions.map do |question| %>
