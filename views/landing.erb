@@ -5,20 +5,31 @@
     <link rel="stylesheet" type="text/css" href="css/landing_styles.css" />
   </head>
   <body>
-    <canvas id="bgCanvas"></canvas>
 
-    <div class="myText">
-      <p> Do you want to answer a survey? </p>
-      <p> Give me your username and let's get started. </p>
+  <div class="contenido1 bg-animado">  
+  <div class="container">
+      <h2 class="titulo">
+        <p> Do you want to answer a survey? </p>
+        <p> Give me your name and let's get started. </p>
+      </h2>
+
+    <form action='/surveys' method='POST'>
+        <input type="text" name='name' placeholder="username" required>
+        <input type="submit" name='submit' value='start'>
+    </form>
     </div>
-
-      <div class="user-name-box">
-        <form action='/surveys' method='POST'>
-            <input class="user-name" type='text' name='name', placeholder='username' required>
-            <input class="submit" type='submit' value='start'>
-        </form>
-      </div>
-
-      <script type="text/javascript" src="js/styles.js"></script>  
+        <ul class="burbujas">
+            <li><span>1</span></li>
+            <li><span>2</span></li>
+            <li><span>3</span></li>
+            <li><span>4</span></li>
+            <li><span>5</span></li>
+            <li><span>6</span></li>
+            <li><span>7</span></li>
+            <li><span>8</span></li>
+            <li><span>9</span></li>
+            <li><span>10</span></li>
+        </ul>
+    </div>
   </body>
 </html>
