@@ -14,56 +14,29 @@ canvas {
     left:0
 }
 
-.blurred-box{
+.user-name-box {
   position: relative;
-  width: 250px;
-  height: 300px;
-  top: calc(50% - 350px);
-  left: calc(50% - 125px);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.blurred-box:after{
-  content: '';
-  width: 300px;
-  height: 300px;
-  position: relative;
-  left: -25px;
-  right: 0;
-  top: -25px;  
-  bottom: 0;
-  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
-  filter: blur(10px);
- }
-
- .user-login-box{
-  position: relative;
-  margin-top: 50px;
+  margin-top: 300px;
   text-align: center;
   z-index: 1;
 }
 
-
-.user-login-box > *{
-  display: inline-block;
-  width: 200px;
-}
-
-.user-icon{
-  width: 100px;
-  height: 100px;
-  position: relative;
-  border-radius: 50%;
-  background-size: contain;
-  background-image: url(https://i.redd.it/ie9jh3okgzq61.jpg);
-}
-
-.user-name{
-  width: 120px;
-  height: 18px;
-  opacity: 0.4;
+input.user-name {
+  width: 150px;
+  height: 30px;
+  opacity: 0.6;
   border-radius: 2px;
   padding: 5px 15px;
   border: 0;
+  text-align: center;
+}
+
+input.submit {
+  width: 150px;
+  height: 30px;
+  opacity: 0.6;
+  border-radius: 2px;
+  padding: 5px 15px;
+  border: 0;
+  text-align: center;
 }
