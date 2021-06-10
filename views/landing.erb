@@ -6,6 +6,17 @@
   </head>
   <body>
     <canvas id="bgCanvas"></canvas>
+
+    <div class="blurred-box">
+        <div class="user-login-box">
+            <span class="user-icon"></span>
+            <div class="user-name"></div>
+                <form action='/surveys' method='POST'>
+                    <input type='text' name='name' placeholder='username' required>
+                    <input type='submit' value='submit'>
+                </form>
+            </div>
+        </div>
     <script type="text/javascript" src="js/styles.js"></script>  
   </body>
 </html>
