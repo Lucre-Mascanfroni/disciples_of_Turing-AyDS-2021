@@ -2,6 +2,7 @@
   <head>
     <meta charset="utf-8"/>
     <title> SURVEY </title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
 
   <body>
@@ -10,7 +11,7 @@
     
         <ul>
             <% @questions.map do |question| %> <!-- For each question -->
-              <li> <%= question.number %> . <%= question.name %> </li> <!-- Display name of the question --> <br>
+              <li> <%= question.name %> </li> <!-- Display name of the question --> <br>
               <%= question.description %> <br> <!-- Display description of the question -->
               <ul>
                   <% question.choices.map do |choice| %> <!-- For each choice of the question -->
