@@ -53,7 +53,8 @@ class App < Sinatra::Base
       @questions = Question.all
       erb :surveys_index
     else
-      [500, {}, 'Internal Server Error']
+      flash[:error] = "Something went wrong trying to create your survey."
+      redirect '/'
     end
   end
   #End of GET and POST methods of careers
@@ -62,7 +63,7 @@ class App < Sinatra::Base
   post '/responses' do
     survey = Survey.find(id: params[:survey_id])
     params[:question_id].each do |q_id|
-      r = Response.new(choice_id: params[:"#{q_id}"], survey_id: survey.id, question_id: q_id)
+      r = Response.new(choice_id: params[q_id], survey_id: survey.id, question_id: q_id)
       r.save
     end
 
@@ -81,19 +82,17 @@ class App < Sinatra::Base
   post '/questions' do
     action = params[:action]
     if action == 'create'
-      Question.create(name: params[:name], description: params[:description], number: params[:number], type: params[:type])
-      redirect '/questions'
-    end
-    
-    if action == 'delete'
+      question = Question.new(name: params[:name], description: params[:description], number: params[:number], type: params[:type])
+      flash[:error] = 'Something went wrong trying to create a question.' if !question.save
+    else
       question = Question.find(id: params[:id])
-      #if the question exists and does not have associated surveys we try to destroy it
-      if !question.nil? && question.choices.empty? && question.responses.empty? && question.destroy
-        redirect '/questions' #if the question was deleted successfully, we redirect to '/questions'
-      else
-        [500, {}, 'Internal Server Error']
+      #if the question does not exist or have associated choices or have associated responses or cannot be deleted
+      if question.nil? || !question.choices.empty? || !question.responses.empty? || !question.destroy
+        flash[:error] = 'Something went wrong trying to delete a question.'
       end
     end
+
+    redirect '/questions'
   end
   #End of GET and POST method of questions
   
@@ -102,13 +101,10 @@ class App < Sinatra::Base
     action = params[:action]
     if action == 'create' && !Question.find(id: params[:question_id]).nil?
       choice = Choice.new(text: params[:text], question_id: params[:question_id])
-      if choice.save
-        @questions = Question.all
-        erb :questions_index
-      else
-        'Something went wrong trying to create the option.'
-      end
+      flash[:error] = 'Something went wrong trying to create the choice.' if !choice.save
     end
+
+    redirect '/questions'
   end
   #End of GET and POST method of choices
 end

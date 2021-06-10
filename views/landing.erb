@@ -2,21 +2,23 @@
   <head>
     <meta charset="utf-8"/>
     <title> HOMEPAGE </title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/landing_styles.css" />
   </head>
   <body>
     <canvas id="bgCanvas"></canvas>
 
-    <div class="blurred-box">
-        <div class="user-login-box">
-            <span class="user-icon"></span>
-            <div class="user-name"></div>
-                <form action='/surveys' method='POST'>
-                    <input type='text' name='name' placeholder='username' required>
-                    <input type='submit' value='submit'>
-                </form>
-            </div>
-        </div>
-    <script type="text/javascript" src="js/styles.js"></script>  
+    <div class="myText">
+      <p> Do you want to answer a survey? </p>
+      <p> Give me your username and let's get started. </p>
+    </div>
+
+      <div class="user-name-box">
+        <form action='/surveys' method='POST'>
+            <input class="user-name" type='text' name='name', placeholder='username' required>
+            <input class="submit" type='submit' value='start'>
+        </form>
+      </div>
+
+      <script type="text/javascript" src="js/styles.js"></script>  
   </body>
 </html>
