@@ -1,25 +1,25 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title> SURVEY </title>
+    <title> Encuesta </title>
     <link rel="stylesheet" type="text/css" href="css/surveys_index_styles.css" />
   </head>
 
   <body>
-    <h1> UNRC SURVEY </h1>
-    <form action='/responses' method='POST'> <!-- Form start -->
+    <h1> Encuesta UNRC </h1>
+    <form action='/responses' method='POST'> <!-- Inicio del formulario -->
     
         <ul>
-            <% @questions.map do |question| %> <!-- For each question -->
-              <li> <%= question.name %> </li> <!-- Display name of the question --> <br>
-              <%= question.description %> <br> <!-- Display description of the question -->
+            <% @questions.map do |question| %> <!-- Por cada pregunta -->
+              <li> <%= question.name %> </li> <!-- Mostramos el nombre de la pregunta --> <br>
+              <%= question.description %> <br> <!-- Mostramos la descripcion de la pregunta -->
               <ul>
-                  <% question.choices.map do |choice| %> <!-- For each choice of the question -->
+                  <% question.choices.map do |choice| %> <!-- Por cada opcion asociada a la pregunta -->
 
                       <input class='input-choice' type='radio' name=<%= question.id %> value=<%= choice.id %> required> <%= choice.text %> <br>
 
-                      <!-- For each choice we generate a 'button' to be able to select it -->
-                      <!-- At the moment we assume that the options are single-choice questions. -->
+                      <!-- Por cada opcion generamos un boton para poder seleccionarla -->
+                      <!-- Por el momento asumimos que las preguntas son de opcion unica. -->
 
                   <% end %>
                   <input type='hidden' name='question_id[]' value=<%= question.id %>>
@@ -30,6 +30,6 @@
 
         <input type='hidden' name='survey_id' value='<%= @survey.id %>'>
         <input class='input-send' type='submit' value='send'>
-    </form> <!-- Form end -->
+    </form> <!-- Fin del formulario -->
   </body>
 </html>
