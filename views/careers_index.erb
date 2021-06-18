@@ -1,37 +1,17 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title> Careers </title>
+    <title> Carreras </title>
   </head>
 
   <body>
-    <h1> Information about the careers </h1>
-    <p> Create a career </p>
-    <form name='formCreateCareer' action='/careers' method='POST'>
-      <input type='text' name='name' placeholder='career name' required> 
-      <input type='hidden' name='action' value='create'> 
-      <input type='submit' value='Create'> 
-    </form>
-
-    <p> Delete a career by ID </p>
-    <form name='formDeleteCareer' action='/careers' method='POST'>
-      <input type='number' name='id' placeholder='career ID' min=0 required> 
-      <input type='hidden' name='action' value='delete'> 
-      <input type='submit' value='Delete'> 
-    </form>
-
-    <% if flash[:error] then %>
-      <div class="flash">
-        <%= flash[:error] %>
-      </div>
-    <% end %>
+    <h1> Informacion de las carreras </h1>
 
     <ul>
       <% @careers.map do |career|%>
         <li>
-          <a href="careers/<%= career.id %>"> <%= career.name%></a>
-          <dd> ID : <%= career.id %> </dd>
-          <dd> Associated surveys : <%= career.surveys.count %> </dd>
+          <%= career.name %>
+          <dd> Encuestas asociadas : <%= career.surveys.count %> </dd>
         </li>
       <%end%>
     </ul>

@@ -2,6 +2,7 @@
   <head>
     <meta charset="utf-8"/>
     <title> SURVEY </title>
+    <link rel="stylesheet" type="text/css" href="css/surveys_index_styles.css" />
   </head>
 
   <body>
@@ -15,7 +16,7 @@
               <ul>
                   <% question.choices.map do |choice| %> <!-- For each choice of the question -->
 
-                      <input type='radio' name=<%= question.id %> value=<%= choice.id %> required> <%= choice.text %> <br>
+                      <input class='input-choice' type='radio' name=<%= question.id %> value=<%= choice.id %> required> <%= choice.text %> <br>
 
                       <!-- For each choice we generate a 'button' to be able to select it -->
                       <!-- At the moment we assume that the options are single-choice questions. -->
@@ -28,9 +29,7 @@
         </ul>
 
         <input type='hidden' name='survey_id' value='<%= @survey.id %>'>
-        <button type='submit' value='submit'>
-            Send
-        </button>
+        <input class='input-send' type='submit' value='send'>
     </form> <!-- Form end -->
   </body>
 </html>
