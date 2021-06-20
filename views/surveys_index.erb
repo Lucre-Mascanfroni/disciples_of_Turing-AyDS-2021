@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8"/>
     <title> Encuesta </title>
-    <link rel="stylesheet" type="text/css" href="css/surveys_index_styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/surveys_styles.css" />
     <link rel="stylesheet" type="text/css" href="css/menu_styles.css" />
   </head>
 
@@ -19,7 +19,7 @@
     </header>
 
     <h1> Encuesta UNRC </h1>
-    <form action='/responses' method='POST'> <!-- Inicio del formulario -->
+    <form action='/responses' method='POST' class="form"> <!-- Inicio del formulario -->
     
         <ul>
             <% @questions.map do |question| %> <!-- Por cada pregunta -->
@@ -27,9 +27,10 @@
               <%= question.description %> <br> <!-- Mostramos la descripcion de la pregunta -->
               <ul>
                   <% question.choices.map do |choice| %> <!-- Por cada opcion asociada a la pregunta -->
-
-                      <input class='input-choice' type='radio' name=<%= question.id %> value=<%= choice.id %> required> <%= choice.text %> <br>
-
+                    <label class="container">
+                      <input type='radio' name=<%= question.id %> value=<%= choice.id %> required> <%= choice.text %> <br>
+                      <span class="checkmark"> </span>
+                    </label>
                       <!-- Por cada opcion generamos un boton para poder seleccionarla -->
                       <!-- Por el momento asumimos que las preguntas son de opcion unica. -->
 
@@ -41,7 +42,7 @@
         </ul>
 
         <input type='hidden' name='survey_id' value='<%= @survey.id %>'>
-        <input class='input-send' type='submit' value='send'>
+        <input class='form_submit' type='submit' value='Enviar'>
     </form> <!-- Fin del formulario -->
   </body>
 </html>
