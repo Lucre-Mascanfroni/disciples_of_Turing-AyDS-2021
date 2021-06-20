@@ -3,32 +3,30 @@
     <meta charset="utf-8"/>
     <title> Pagina de Inicio </title>
     <link rel="stylesheet" type="text/css" href="css/landing_styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/menu_styles.css" />
   </head>
   <body>
+    <header>
+      <input type="checkbox" id="btn_menu">
+      <label for ="btn_menu"> <img src="images/menu_icon.png" alt=""> 
+      </label>
 
-  <div class="contenido1 bg-animado">  
-  <div class="container">
-      <h2 class="titulo">
-      <p> ¿Te gustaria saber que carrera estudiar? Bien, dame tu nombre de usuario y empecemos. </p>
-      </h2>
-
-    <form action='/surveys' method='POST'>
-        <input type="text" name='name' placeholder="nombre de usuario" required>
-        <input type="submit" name='submit' value='Iniciar'>
-    </form>
-    </div>
-        <ul class="burbujas">
-            <li><span>1</span></li>
-            <li><span>2</span></li>
-            <li><span>3</span></li>
-            <li><span>4</span></li>
-            <li><span>5</span></li>
-            <li><span>6</span></li>
-            <li><span>7</span></li>
-            <li><span>8</span></li>
-            <li><span>9</span></li>
-            <li><span>10</span></li>
+      <nav class="menu">
+        <ul>
+          <li> <a href="/"> Inicio  </a> </li>
+          <li> <a href="/careers"> Carreras </a> </li>
         </ul>
-    </div>
+      </nav>
+    </header>
+
+    <h1 class="form_title">
+      <p> ¿Te gustaria saber que carrera estudiar? </p> 
+      <p> Bien, dame tu nombre de usuario y empecemos. </p>
+    </h1>
+
+    <form action='/surveys' method='POST' class='form'>
+        <input type="text" name='name' placeholder="nombre de usuario" class='form_input' required>
+        <input type="submit" name='submit' value='Iniciar' class='form_submit'>
+    </form>
   </body>
 </html>
