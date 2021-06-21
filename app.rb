@@ -42,7 +42,8 @@ class App < Sinatra::Base
       r.save
     end
 
-    @career_result = Career.find(id: survey.id_career_result(Career.all))
+    @result = survey.result(Career.all)
+    @career_result = @result[@result.size - 1][0]
     survey.update_attribute('career_id', @career_result.id)
     erb :outcome_index
   end

@@ -9,19 +9,19 @@ class Survey < Sequel::Model
     	validates_presence :name
     end
 
-    def id_career_result(careers)
+    def result(careers)
         h = {}
         careers.each do |career|
-            h[career.id] = 0
+            h[career] = 0
         end
 
         responses.each do |response|
             response.choice.outcomes.each do |outcome|
-                h[outcome.career.id] = h[outcome.career.id] + 1
+                h[outcome.career] += 1
             end
         end
 
-        h.key(h.values.max)
+        h.sort_by { |career, outcomes| outcomes }
     end
 
     def update_attribute(name, value)

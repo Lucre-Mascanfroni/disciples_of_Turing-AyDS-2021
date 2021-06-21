@@ -25,5 +25,10 @@
         <dd> Aun no se agrego una descripcion. </dd>
       <% end %>
         <dd> <%= @career_result.full_description %> </dd>
+
+        <p> Resultados: <p>
+        <% for i in (@result.size - 1).downto(0) do %>
+          <p> <%= @result[i][0].name %> : <%= @result[i][1] %> <p>
+        <% end %>
   </body> 
 </html>
