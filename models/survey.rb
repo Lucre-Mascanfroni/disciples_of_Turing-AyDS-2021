@@ -1,6 +1,6 @@
 
 class Survey < Sequel::Model
-	plugin :validation_helpers
+    plugin :validation_helpers
     one_to_many    :responses
     many_to_one    :career
 
@@ -25,8 +25,8 @@ class Survey < Sequel::Model
     end
 
     def update_attribute(name, value)
-		send(name.to_s + "=", value)
-		save
-	end
+	send(name.to_s + "=", value)
+	save
+    end
 end
 
