@@ -32,7 +32,7 @@ class App < Sinatra::Base
       redirect '/'
     end
   end
-  #End of POST method of careers
+  #End of POST method of surveys
 
   #POST method of responses
   post '/responses' do
