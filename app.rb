@@ -23,7 +23,6 @@ class App < Sinatra::Base
       @questions = Question.all
       erb :surveys_index
     else
-      flash[:error] = "Algo salio mal mientras se intentaba crear tu encuesta."
       redirect '/'
     end
   end
