@@ -1,13 +1,11 @@
 class Choice < Sequel::Model
     plugin :validation_helpers
-    # Uses singular form of associated model name
-    many_to_one     :question
-    # Uses plural form of associated model name
-    one_to_many     :outcomes
-    one_to_many      :responses
+    many_to_one :question
+    one_to_many :outcomes
+    one_to_many :responses
     def validate 
     	super
-    	errors.add(:text,'text can not be empty') if !text || text.empty?
+    	errors.add(:text,'El campo texto no puede ser vacio.') if !text || text.empty?
     end
 
 end
