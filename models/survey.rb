@@ -23,10 +23,5 @@ class Survey < Sequel::Model
 
         h.sort_by { |career, outcomes| outcomes }
     end
-
-    def update_attribute(name, value)
-	send(name.to_s + "=", value)
-	save
-    end
 end
 
