@@ -32,8 +32,8 @@ class App < Sinatra::Base
   post '/responses' do
     survey = Survey.find(id: params[:survey_id])
     params[:question_id].each do |q_id|
-      r = Response.new(choice_id: params[q_id], survey_id: survey.id, question_id: q_id)
-      r.save
+      response = Response.new(choice_id: params[q_id], survey_id: survey.id, question_id: q_id)
+      response.save
     end
 
     @result = survey.result(Career.all)
