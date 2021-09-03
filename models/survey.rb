@@ -10,18 +10,18 @@ class Survey < Sequel::Model
     end
 
     def result(careers)
-        h = {}
+        career_weights = {}
         careers.each do |career|
-            h[career] = 0
+            career_weights[career] = 0
         end
 
         responses.each do |response|
             response.choice.outcomes.each do |outcome|
-                h[outcome.career] += 1
+                career_weights[outcome.career] += 1
             end
         end
 
-        h.sort_by { |career, outcomes| outcomes }
+        career_weights.sort_by { |career, outcomes| outcomes }
     end
 end
 
