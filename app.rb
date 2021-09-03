@@ -1,11 +1,6 @@
 require './models/init.rb'
 
-require 'sinatra/base'
-require 'sinatra/flash'
-
 class App < Sinatra::Base
-  enable :sessions
-  register Sinatra::Flash
 
   #GET method of root
   get '/' do
@@ -28,7 +23,7 @@ class App < Sinatra::Base
       @questions = Question.all
       erb :surveys_index
     else
-      flash[:error] = "Algo salio mal mientras se intentaba crear tu encuesta.."
+      flash[:error] = "Algo salio mal mientras se intentaba crear tu encuesta."
       redirect '/'
     end
   end
@@ -44,7 +39,7 @@ class App < Sinatra::Base
 
     @result = survey.result(Career.all)
     @career_result = @result[@result.size - 1][0]
-    survey.update_attribute('career_id', @career_result.id)
+    survey.update(:career_id => @career_result.id)
     erb :outcome_index
   end
   #End of POST method of responses
