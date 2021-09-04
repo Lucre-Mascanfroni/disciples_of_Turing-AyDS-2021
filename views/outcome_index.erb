@@ -7,14 +7,14 @@
 
   <body>
     <%= erb :menu %>
-
     <h1> Resultado </h1>
     <p> Deberias estudiar: <%= @career_result.name %> </p>
     <p> Descripcion de <%= @career_result.name %>: </p>
-    <% if !@career_result.doesHaveFullDescription? %>
-      <dd> Aun no se agrego una descripcion. </dd>
-    <% end %>
+    <% if @career_result.full_description && !@career_result.full_description.empty? %>
       <dd> <%= @career_result.full_description %> </dd>
+    <% else %>
+      <dd> Aun no se agrego una descripcion </dd>
+    <% end %>
 
     <h1> Resultados generales: </h1>
     <% for i in (@result.size - 1).downto(0) do %>
