@@ -6,8 +6,4 @@ class Career < Sequel::Model
 		super 
 		validates_presence :name
 	end
-
-	def doesHaveFullDescription?
-		full_description && !full_description.empty?
-	end
 end
