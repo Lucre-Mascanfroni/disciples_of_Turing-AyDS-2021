@@ -5,8 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/surveys_styles.css" />
   </head>
   <body>
-      <%= erb :menu %>
-
+    <%= erb :menu %>
     <h1> Encuesta UNRC </h1>
     <form action='/responses' method='POST' class="form"> <!-- Inicio del formulario -->
     
@@ -21,8 +20,6 @@
                       <span class="checkmark"> </span>
                     </label>
                       <!-- Por cada opcion generamos un boton para poder seleccionarla -->
-                      <!-- Por el momento asumimos que las preguntas son de opcion unica. -->
-
                   <% end %>
                   <input type='hidden' name='question_id[]' value=<%= question.id %>>
                   <br>
