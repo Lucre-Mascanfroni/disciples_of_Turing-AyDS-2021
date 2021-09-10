@@ -16,7 +16,7 @@ body {
 .form_title {
     text-align: center;
     margin-top: 0;
-    color: rgba(0,0,0,0.7);
+    color: rgba(26, 103, 219, 0.7);
 }
 
 .form_input, .form_submit {
