@@ -1,19 +1,21 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title> Pagina de Inicio </title>
+    <title> Test vocacional </title>
     <link rel="stylesheet" type="text/css" href="css/landing_styles.css" />
   </head>
-  <body>
+  <body bgcolor="#CAE3EC">
+
     <%= erb :menu %>
 
     <h1 class="form_title">
+      <p> Bienvenid@  </p>
       <p> ¿Te gustaría saber que carrera estudiar? </p> 
       <p> Bien, dame tu nombre de usuario y empecemos. </p>
     </h1>
 
     <form action='/surveys' method='POST' class='form'>
-        <input type="text" name='name' placeholder="nombre de usuario" class='form_input' required>
+        <input type="text" name='name' placeholder="Nombre de usuario" class='form_input' required>
         <input type="submit" name='submit' value='Iniciar' class='form_submit'>
     </form>
   </body>
