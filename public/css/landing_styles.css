@@ -41,13 +41,10 @@ body {
 }
 
 footer {
-    align-self: flex-end;
-    background-color: rgba(26, 103, 219, 0.7);
-    position: fixed;
-    bottom: 0;
     text-align: center;
     width: 100%;
     color: royalblue;
+    align-self: flex-end;
 }
 
 
