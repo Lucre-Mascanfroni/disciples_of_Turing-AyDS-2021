@@ -5,5 +5,17 @@ class Career < Sequel::Model
 	def validate
 		super 
 		validates_presence :name
+	end	
+	
+	def s_for_dates(idCareer,firstDate,lastDate)
+		surveys = Career.find(id: idCareer.to_i).surveys
+		result = []
+		surveys each do |survey|
+			if Time.parse(firstDate.to_s) <= survey.created_at && survey.created_at <= Time.parse(lastDate.to_s)
+				result.push(survey)
+			end
+		end
+		return result
 	end
 end
+
