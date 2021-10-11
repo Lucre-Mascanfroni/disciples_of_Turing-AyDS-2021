@@ -14,6 +14,17 @@ class App < Sinatra::Base
     erb :careers_index
   end
   #End of GET method of careers
+  #GET methods give all surveys for dates
+  get "/surveys" do
+    @compute = false
+    if params[:careerId] && params[:firstDate] && params[:lastDate]
+      @compute = true
+      @result = Career.find(id: params[:careerId]).surveys_for_dates(params[:firstDate],params[:lastDate])
+    end
+    @careers = Career.all
+    erb :REQF3
+  
+  end
 
   #POST methods of surveys
   post "/surveys" do

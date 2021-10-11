@@ -7,12 +7,13 @@ class Career < Sequel::Model
 		validates_presence :name
 	end	
 	
-	def s_for_dates(idCareer,firstDate,lastDate)
-		surveys = Career.find(id: idCareer.to_i).surveys
-		result = []
-		surveys each do |survey|
+	def s_for_dates(firstDate,lastDate)
+		result = {}
+		result["name"]=name
+		result["number"]=0
+		surveys.each do |survey|
 			if Time.parse(firstDate.to_s) <= survey.created_at && survey.created_at <= Time.parse(lastDate.to_s)
-				result.push(survey)
+				result["number"]+=1
 			end
 		end
 		return result
