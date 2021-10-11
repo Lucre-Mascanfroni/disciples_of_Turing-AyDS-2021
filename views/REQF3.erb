@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title> Encuestas </title>
+    <link rel="stylesheet" type="text/css" href="css/careers_styles.css" />
+  </head>
+
+  <body>
+    <%= erb :menu %>
+    <form action='' method='' class='form'>
+        <input type='date' name='initial_date' required>
+        <input type='date' name='final_date' required>
+        <select name="select">
+            <option selected value="0"> Elige una opcion </option>
+            <% @careers.map do |career| %>
+                <option value=<%= career.id %>> <%= career.name %> </option>
+            <% end %>
+        </select> <br>
+        <input type='submit' value='Enviar'>
+    </form>
+  </body>
+</html>
