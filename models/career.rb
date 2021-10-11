@@ -7,9 +7,9 @@ class Career < Sequel::Model
 		validates_presence :name
 	end	
 	
-	def surveys_for_dates(firstDate,lastDate)
-		if firstDate.to_s) <= ime.parse(lastDate.to_s)
-			result = {}
+	def s_for_dates(firstDate,lastDate)
+		result = {}
+		if Time.parse(firstDate.to_s) <= Time.parse(lastDate.to_s)
 			result["name"]=name
 			result["number"]=0
 			surveys.each do |survey|
@@ -17,8 +17,8 @@ class Career < Sequel::Model
 					result["number"]+=1
 				end
 			end
-			return result
 		end
-	end
+		return result
+	end		
 end
 

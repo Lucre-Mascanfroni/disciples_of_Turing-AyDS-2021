@@ -14,12 +14,11 @@ class App < Sinatra::Base
     erb :careers_index
   end
   #End of GET method of careers
-  #GET methods give all surveys for dates
+  #GET methods all surveys given id of the career and two dates
   get "/surveys" do
-    @compute = false
+    @result = {}
     if params[:careerId] && params[:firstDate] && params[:lastDate]
-      @compute = true
-      @result = Career.find(id: params[:careerId]).surveys_for_dates(params[:firstDate],params[:lastDate])
+      @result = Career.find(id: params[:careerId]).s_for_dates(params[:firstDate],params[:lastDate])
     end
     @careers = Career.all
     erb :REQF3
