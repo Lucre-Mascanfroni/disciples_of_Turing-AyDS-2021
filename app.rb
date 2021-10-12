@@ -14,7 +14,7 @@ class App < Sinatra::Base
     erb :careers_index
   end
   #End of GET method of careers
-  #GET methods all surveys given id of the career and two dates
+  #GET methods all surveys given id of the career and two dates.
   get "/surveys" do
     @result = {}
     if params[:careerId] && params[:firstDate] && params[:lastDate]
