@@ -8,6 +8,9 @@ class Career < Sequel::Model
 	end	
 	
 	def s_for_dates(firstDate,lastDate)
+		if  Time.parse(lastDate) <Time.parse(firstDate)
+			raise ArgumentError.new("fistDate is greater than the lastDate.")
+		end
 		result = {}
 		if Time.parse(firstDate.to_s) <= Time.parse(lastDate.to_s)
 			result["name"]=name
