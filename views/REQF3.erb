@@ -7,10 +7,10 @@
 
   <body>
     <%= erb :menu %>
-    <form action='' method='' class='form'>
-        <input type='date' name='initial_date' required>
-        <input type='date' name='final_date' required>
-        <select name="select">
+    <form action="/surveys" method="GET" class='form'>
+        <input type='date' name='firstDate' required>
+        <input type='date' name='lastDate' required>
+        <select name="careerId">
             <option selected value="0"> Elige una opcion </option>
             <% @careers.map do |career| %>
                 <option value=<%= career.id %>> <%= career.name %> </option>
@@ -18,5 +18,9 @@
         </select> <br>
         <input type='submit' value='Enviar'>
     </form>
+
+    <% if !@result.empty? %>
+      <%= @result["name"] %> - <%= @result["number"] %> encuestas.
+    <% end %>
   </body>
 </html>
