@@ -6,6 +6,7 @@ gem 'sinatra', '2.0.7'
 gem 'pg'
 gem 'sequel'
 gem 'sinatra-flash'
+gem 'rubocop', '~> 0.91.0', require: false 
 
 group :development do
   gem 'dotenv', '2.7.5'
