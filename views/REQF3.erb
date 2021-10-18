@@ -16,7 +16,7 @@
         <input type='date' name='firstDate' required>
         <input type='date' name='lastDate' required>
         <select name="careerId">
-            <option selected value="0"> Elige una opcion </option>
+            <option selected value="0"> Elige una carrera </option>
             <% @careers.map do |career| %>
                 <option value=<%= career.id %>> <%= career.name %> </option>
             <% end %>
