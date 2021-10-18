@@ -19,3 +19,10 @@ input.input-submit {
     padding: 5px 15px;
     text-align: center;
 }
+
+footer {
+    text-align: center;
+    width: 100%;
+    color: royalblue;
+    align-self: flex-end;
+}
