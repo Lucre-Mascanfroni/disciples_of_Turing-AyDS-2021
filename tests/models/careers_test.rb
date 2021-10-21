@@ -17,4 +17,6 @@ class CareerTest < MiniTest::Unit::TestCase
         c.name = ''
         assert_equal c.valid?, false
    end
+   def test_method_s_for_dates
+   end
 end
