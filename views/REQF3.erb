@@ -2,25 +2,35 @@
   <head>
     <meta charset="utf-8"/>
     <title> Encuestas </title>
-    <link rel="stylesheet" type="text/css" href="css/careers_styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/reqf3_styles.css" />
   </head>
 
-  <body>
+  <body bgcolor="#CAE3EC">
     <%= erb :menu %>
+
+    <h1 class="form_title">
+      <p> Cantidad de encuestas realizadas en: </p>
+    </h1>
+
     <form action="/surveys" method="GET" class='form'>
         <input type='date' name='firstDate' required>
         <input type='date' name='lastDate' required>
         <select name="careerId">
-            <option selected value="0"> Elige una opcion </option>
+            <option selected value="0"> Elige una carrera </option>
             <% @careers.map do |career| %>
                 <option value=<%= career.id %>> <%= career.name %> </option>
             <% end %>
         </select> <br>
-        <input type='submit' value='Enviar'>
+         <input type="submit" value='Enviar' class='form_submit'>
     </form>
 
     <% if !@result.empty? %>
       <%= @result["name"] %> - <%= @result["number"] %> encuestas.
     <% end %>
+
+    <footer class="footer">
+      <p> &copy; 2021 Universidad Nacional de Río Cuarto </p>
+    </footer>
+
   </body>
 </html>
