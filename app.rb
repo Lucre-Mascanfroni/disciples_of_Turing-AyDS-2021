@@ -22,7 +22,7 @@ class App < Sinatra::Base
       @result = Career.find(id: params[:careerId]).number_of_surveys_between_two_dates(params[:firstDate],params[:lastDate])
     end
     @careers = Career.all
-    erb :REQF3
+    erb :number_of_surveys_between_two_dates
   end
 
   #POST methods of surveys
