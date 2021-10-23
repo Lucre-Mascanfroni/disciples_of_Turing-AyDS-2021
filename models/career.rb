@@ -9,11 +9,15 @@ class Career < Sequel::Model
 	
 	def number_of_surveys_between_two_dates(initial_date, final_date)
 		result = {}
-		if Time.parse(initial_date.to_s) <= Time.parse(final_date.to_s)
+		if the_dates_are_valid?(initial_date, final_date)
 			result = {"name" => name, "number" => 0}
 			surveys.map { |survey|  survey.is_created_at_between(initial_date, final_date) && result["number"] += 1 }
 		end
 		return result
+	end
+
+	def the_dates_are_valid?(initial_date, final_date)
+		Time.parse(initial_date.to_s) <= Time.parse(final_date.to_s)
 	end
 end
 
