@@ -18,7 +18,7 @@ class App < Sinatra::Base
   get "/surveys" do
     @result = {}
     if params[:careerId] && params[:firstDate] && params[:lastDate]
-      @result = Career.find(id: params[:careerId]).s_for_dates(params[:firstDate],params[:lastDate])
+      @result = Career.find(id: params[:careerId]).number_of_surveys_between_two_dates(params[:firstDate],params[:lastDate])
     end
     @careers = Career.all
     erb :REQF3

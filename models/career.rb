@@ -7,7 +7,7 @@ class Career < Sequel::Model
 		validates_presence :name
 	end	
 	
-	def s_for_dates(firstDate,lastDate)
+	def number_of_surveys_between_two_dates(firstDate,lastDate)
 		if  Time.parse(lastDate) <Time.parse(firstDate)
 			raise ArgumentError.new("fistDate is greater than the lastDate.")
 		end
