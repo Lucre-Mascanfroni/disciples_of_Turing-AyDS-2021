@@ -18,8 +18,8 @@ class App < Sinatra::Base
   #GET methods all surveys given id of the career and two dates.
   get "/surveys" do
     @result = {}
-    if params[:careerId] && params[:firstDate] && params[:lastDate]
-      @result = Career.find(id: params[:careerId]).number_of_surveys_between_two_dates(params[:firstDate],params[:lastDate])
+    if params[:careerId] && params[:initial_date] && params[:final_date]
+      @result = Career.find(id: params[:careerId]).number_of_surveys_between_two_dates(params[:initial_date],params[:final_date])
     end
     @careers = Career.all
     erb :number_of_surveys_between_two_dates
