@@ -14,6 +14,7 @@ class App < Sinatra::Base
     erb :careers_index
   end
   #End of GET method of careers
+
   #GET methods all surveys given id of the career and two dates.
   get "/surveys" do
     @result = {}
@@ -22,7 +23,6 @@ class App < Sinatra::Base
     end
     @careers = Career.all
     erb :REQF3
-  
   end
 
   #POST methods of surveys

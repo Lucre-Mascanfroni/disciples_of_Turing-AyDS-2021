@@ -7,16 +7,16 @@ class Career < Sequel::Model
 		validates_presence :name
 	end	
 	
-	def number_of_surveys_between_two_dates(firstDate,lastDate)
-		if  Time.parse(lastDate) <Time.parse(firstDate)
-			raise ArgumentError.new("fistDate is greater than the lastDate.")
+	def number_of_surveys_between_two_dates(initial_date, final_date)
+		if  Time.parse(final_date) < Time.parse(initial_date)
+			raise ArgumentError.new("initial date is greater than the final date.")
 		end
 		result = {}
-		if Time.parse(firstDate.to_s) <= Time.parse(lastDate.to_s)
+		if Time.parse(initial_date.to_s) <= Time.parse(final_date.to_s)
 			result["name"]=name
 			result["number"]=0
 			surveys.each do |survey|
-				if Time.parse(firstDate.to_s) <= survey.created_at && survey.created_at <= Time.parse(lastDate.to_s)
+				if Time.parse(initial_date.to_s) <= survey.created_at && survey.created_at <= Time.parse(final_date.to_s)
 					result["number"]+=1
 				end
 			end
