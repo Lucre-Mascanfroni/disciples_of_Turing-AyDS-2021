@@ -11,10 +11,8 @@ class Career < Sequel::Model
 		if  Time.parse(final_date) < Time.parse(initial_date)
 			raise ArgumentError.new("initial date is greater than the final date.")
 		end
-		result = {}
 		if Time.parse(initial_date.to_s) <= Time.parse(final_date.to_s)
-			result["name"]=name
-			result["number"]=0
+			result = {"name" => name, "number" => 0}
 			surveys.each do |survey|
 				if Time.parse(initial_date.to_s) <= survey.created_at && survey.created_at <= Time.parse(final_date.to_s)
 					result["number"]+=1
