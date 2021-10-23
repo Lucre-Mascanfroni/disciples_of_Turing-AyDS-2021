@@ -19,5 +19,9 @@ class Survey < Sequel::Model
         responses.map { |response| response.choice.outcomes.map { |outcome| career_weights[outcome.career] += 1 } }
         career_weights
     end
+
+    def is_created_at_between(initial_date, final_date)
+        Time.parse(initial_date.to_s) <= created_at && created_at <= Time.parse(final_date.to_s)
+    end
 end
 
