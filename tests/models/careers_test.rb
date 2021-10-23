@@ -17,7 +17,7 @@ class CareerTest < MiniTest::Unit::TestCase
         c.name = ''
         assert_equal c.valid?, false
    end
-   def test_method_s_for_dates
+   def test_method_number_of_surveys_between_two_dates
      clean_database
      career = Career.create(name: 'Microbiología')
      Survey.create(name: 'U1', career_id: career.id, created_at:Time.parse('2021-10-11'))
@@ -27,7 +27,7 @@ class CareerTest < MiniTest::Unit::TestCase
      c1 = Career.find(id:career.id)
      firstDate = '2021-10-11'
      lastDate = '2021-10-19'
-     result = c1.s_for_dates(firstDate,lastDate)['number']
+     result = c1.number_of_surveys_between_two_dates(firstDate,lastDate)['number']
      assert_equal result, 4
 
    end
