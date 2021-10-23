@@ -41,11 +41,7 @@ class App < Sinatra::Base
   #POST method of responses
   post '/responses' do
     survey = Survey.find(id: params[:survey_id])
-    params[:question_id].each do |q_id|
-      response = Response.new(choice_id: params[q_id], survey_id: survey.id, question_id: q_id)
-      response.save
-    end
-
+    params[:question_id].map{ |question_id| Response.create(choice_id: params[question_id], survey_id: survey.id, question_id: question_id) }
     @result = survey.survey_result(Career.all)
     @career_result = @result[@result.size - 1][0]
     survey.update(:career_id => @career_result.id)
