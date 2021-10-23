@@ -12,11 +12,7 @@ class Survey < Sequel::Model
     def survey_result(careers)
         career_weights = {}
         careers.map { |career| career_weights[career] = 0 }
-
-        responses.each do |response|
-            response.choice.outcomes.map { |outcome| career_weights[outcome.career] += 1 }
-        end
-
+        responses.map { |response| response.choice.outcomes.map { |outcome| career_weights[outcome.career] += 1 } }
         career_weights.sort_by { |career, outcomes| outcomes }
     end
 end
