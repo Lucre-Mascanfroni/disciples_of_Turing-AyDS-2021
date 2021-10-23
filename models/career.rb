@@ -11,11 +11,9 @@ class Career < Sequel::Model
 		result = {}
 		if Time.parse(initial_date.to_s) <= Time.parse(final_date.to_s)
 			result = {"name" => name, "number" => 0}
-			surveys.each do |survey|
-				result["number"] += 1 if survey.is_created_at_between(initial_date, final_date)
-			end
+			surveys.map { |survey|  survey.is_created_at_between(initial_date, final_date) && result["number"] += 1 }
 		end
 		return result
-	end		
+	end
 end
 
