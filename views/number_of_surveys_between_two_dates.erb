@@ -13,8 +13,8 @@
     </h1>
 
     <form action="/surveys" method="GET" class='form'>
-        <input type='date' name='firstDate' required>
-        <input type='date' name='lastDate' required>
+        <input type='date' name='initial_date' required>
+        <input type='date' name='final_date' required>
         <select name="careerId">
             <option selected value="0"> Elige una carrera </option>
             <% @careers.map do |career| %>
