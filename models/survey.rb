@@ -9,11 +9,9 @@ class Survey < Sequel::Model
     	validates_presence :name
     end
 
-    def result(careers)
+    def survey_result(careers)
         career_weights = {}
-        careers.each do |career|
-            career_weights[career] = 0
-        end
+        careers.map { |career| career_weights[career] = 0 }
 
         responses.each do |response|
             response.choice.outcomes.each do |outcome|
