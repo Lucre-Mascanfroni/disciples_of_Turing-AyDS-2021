@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Sequel.migration do
   up do
     create_table(:choices) do
@@ -11,4 +13,3 @@ Sequel.migration do
     drop_table(:choices)
   end
 end
-

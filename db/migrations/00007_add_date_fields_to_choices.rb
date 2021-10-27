@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Sequel.migration do
   up do
     add_column :choices, :created_at, DateTime, default: Sequel::CURRENT_TIMESTAMP
@@ -9,4 +11,3 @@ Sequel.migration do
     drop_column :choices, :updated_at
   end
 end
-

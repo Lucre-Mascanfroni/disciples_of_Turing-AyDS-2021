@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Sequel.migration do
   up do
     add_column :careers, :full_description, String, text: true
@@ -7,4 +9,3 @@ Sequel.migration do
     drop_column :careers, :full_description
   end
 end
-

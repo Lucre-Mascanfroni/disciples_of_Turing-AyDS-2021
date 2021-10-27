@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 Sequel.migration do
   up do
     drop_table(:posts)
   end
-  
+
   down do
     create_table(:posts) do
       primary_key   :id
@@ -10,4 +12,3 @@ Sequel.migration do
     end
   end
 end
-

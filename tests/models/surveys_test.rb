@@ -1,4 +1,6 @@
-require File.expand_path '../../test_helper.rb', __FILE__
+# frozen_string_literal: true
+
+require File.expand_path '../test_helper.rb', __dir__
 
 class SurveyTest < MiniTest::Unit::TestCase
   MiniTest::Unit::TestCase
@@ -31,7 +33,6 @@ class SurveyTest < MiniTest::Unit::TestCase
     survey = Survey.create(name: 'survey 1')
     c = Career.create(name: 'Prof. en Ciencias de la Computación')
     survey.career_id = c.id
-    assert_equal survey.career,c
+    assert_equal survey.career, c
   end
-
 end

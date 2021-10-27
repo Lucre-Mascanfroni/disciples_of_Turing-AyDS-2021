@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 Sequel.migration do
   up do
     drop_table(:lessons)
   end
-  
+
   down do
     create_table(:lessons) do
       primary_key   :id

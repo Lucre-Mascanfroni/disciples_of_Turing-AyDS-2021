@@ -1,1489 +1,256 @@
 Inspecting 36 files
-CCCCCCCCCCCCCCCCCCCCWCCCCCCCWWWWWWWC
+.C..............C...WCC.C.CCCWWWWWWC
 
 Offenses:
 
-Gemfile:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-ruby '2.6.4'
-^
-Gemfile:6:1: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem pg should appear before sinatra.
-gem 'pg'
-^^^^^^^^
-Gemfile:9:1: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem rubocop should appear before sinatra-flash.
-gem 'rubocop', '~> 0.91.0', require: false 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Gemfile:9:43: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-gem 'rubocop', '~> 0.91.0', require: false 
-                                          ^
-app.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-require './models/init.rb'
-^
-app.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+app.rb:5:1: C: Style/Documentation: Missing top-level class documentation comment.
 class App < Sinatra::Base
 ^^^^^
-app.rb:4:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body beginning.
-app.rb:5:3: C: Layout/LeadingCommentSpace: Missing space after #.
-  #GET method of root
-  ^^^^^^^^^^^^^^^^^^^
-app.rb:9:3: C: Layout/LeadingCommentSpace: Missing space after #.
-  #End of GET method of root
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^
-app.rb:11:3: C: Layout/LeadingCommentSpace: Missing space after #.
-  #GET method of careers
-  ^^^^^^^^^^^^^^^^^^^^^^
-app.rb:16:3: C: Layout/LeadingCommentSpace: Missing space after #.
-  #End of GET method of careers
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app.rb:18:3: C: Layout/LeadingCommentSpace: Missing space after #.
-  #GET methods all surveys given id of the career and two dates.
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app.rb:19:7: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  get "/surveys" do
-      ^^^^^^^^^^
-app.rb:22:109: C: Layout/SpaceAfterComma: Space missing after comma.
-      @result = Career.find(id: params[:careerId]).number_of_surveys_between_two_dates(params[:initial_date],params[:final_date])
-                                                                                                            ^
-app.rb:22:121: C: Layout/LineLength: Line is too long. [129/120]
-      @result = Career.find(id: params[:careerId]).number_of_surveys_between_two_dates(params[:initial_date],params[:final_date])
-                                                                                                                        ^^^^^^^^^
-app.rb:28:3: C: Layout/LeadingCommentSpace: Missing space after #.
-  #POST methods of surveys
-  ^^^^^^^^^^^^^^^^^^^^^^^^
-app.rb:29:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  post "/surveys" do
-       ^^^^^^^^^^
-app.rb:39:3: C: Layout/LeadingCommentSpace: Missing space after #.
-  #End of POST method of surveys
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app.rb:41:3: C: Layout/LeadingCommentSpace: Missing space after #.
-  #POST method of responses
-  ^^^^^^^^^^^^^^^^^^^^^^^^^
-app.rb:44:29: C: Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
-    params[:question_id].map{ |question_id| Response.create(choice_id: params[question_id], survey_id: survey.id, question_id: question_id) }
-                            ^
-app.rb:44:121: C: Layout/LineLength: Line is too long. [141/120]
-    params[:question_id].map{ |question_id| Response.create(choice_id: params[question_id], survey_id: survey.id, question_id: question_id) }
-                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^
-app.rb:47:19: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-    survey.update(:career_id => @career_result.id)
-                  ^^^^^^^^^^^^^
-app.rb:50:3: C: Layout/LeadingCommentSpace: Missing space after #.
-  #End of POST method of responses
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app.rb:52:1: C: Layout/TrailingEmptyLines: 1 trailing blank lines detected.
-config.ru:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-require "bundler"
-^
-config.ru:1:9: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "bundler"
-        ^^^^^^^^^
-config.ru:2:9: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "sinatra"
-        ^^^^^^^^^
-config.ru:13:20: C: Layout/MultilineMethodCallBraceLayout: Closing method call brace must be on the line after the last argument when opening brace is on a separate line from the first argument.
-  password: 'magic')
-                   ^
-config.ru:19:1: C: Layout/TrailingEmptyLines: 1 trailing blank lines detected.
-db/migrations/00001_create_posts_table.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00001_create_posts_table.rb:7:3: C: Layout/CommentIndentation: Incorrect indentation detected (column 2 instead of 6).
-  #    DateTime      :updated_at,   default: Sequel::CURRENT_TIMESTAMP
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/migrations/00002_add_date_fields_to_posts.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00003_create_questions_table.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00004_create_lesson_table.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00004_create_lesson_table.rb:9:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-db/migrations/00004_create_lesson_table.rb:13:3: C: Layout/BlockAlignment: end at 13, 2 is not aligned with Sequel.migration do at 1, 0.
-  end
-  ^^^
-db/migrations/00005_add_date_fields_to_questions.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00006_create_choices_table.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00006_create_choices_table.rb:14:1: C: Layout/TrailingEmptyLines: 1 trailing blank lines detected.
-db/migrations/00007_add_date_fields_to_choices.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00007_add_date_fields_to_choices.rb:12:1: C: Layout/TrailingEmptyLines: 1 trailing blank lines detected.
-db/migrations/00008_create_outcomes_table.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00009_create_careers_table.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00010_create_surveys_table.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00011_create_responses_table.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00011_create_responses_table.rb:12:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-db/migrations/00011_create_responses_table.rb:16:3: C: Layout/BlockAlignment: end at 16, 2 is not aligned with Sequel.migration do at 1, 0.
-  end
-  ^^^
-db/migrations/00011_create_responses_table.rb:17:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-db/migrations/00012_remove_lessons_table.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00012_remove_lessons_table.rb:5:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-db/migrations/00013_remove_posts_table.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00013_remove_posts_table.rb:5:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-db/migrations/00013_remove_posts_table.rb:13:1: C: Layout/TrailingEmptyLines: 1 trailing blank lines detected.
+app.rb:23:121: C: Layout/LineLength: Line is too long. [130/120]
+      @result = Career.find(id: params[:careerId]).number_of_surveys_between_two_dates(params[:initial_date], params[:final_date])
+                                                                                                                        ^^^^^^^^^^
+app.rb:45:121: C: Layout/LineLength: Line is too long. [142/120]
+    params[:question_id].map { |question_id| Response.create(choice_id: params[question_id], survey_id: survey.id, question_id: question_id) }
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^
 db/migrations/00014_create_posts_table _again.rb:1:1: C: Naming/FileName: The name of this source file (00014_create_posts_table _again.rb) should use snake_case.
-Sequel.migration do
+# frozen_string_literal: true
 ^
-db/migrations/00014_create_posts_table _again.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00015_create_administrator_table.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00015_create_administrator_table.rb:11:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-db/migrations/00015_create_administrator_table.rb:15:3: C: Layout/BlockAlignment: end at 15, 2 is not aligned with Sequel.migration do at 1, 0.
-  end
-  ^^^
-db/migrations/00016_add_full_description_to_careers_table.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/migrations/00016_add_full_description_to_careers_table.rb:10:1: C: Layout/TrailingEmptyLines: 1 trailing blank lines detected.
-db/migrations/00017_add_foreign_key_to_outcomes.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-Sequel.migration do
-^
-db/seeds.rb:1:1: C: Layout/LeadingCommentSpace: Missing space after #.
-#Clean DataSet
-^^^^^^^^^^^^^^
-db/seeds.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-#Clean DataSet
-^
-db/seeds.rb:2:17: C: Style/SymbolProc: Pass &:destroy as an argument to map instead of a block.
-Outcome.all.map { |o| o.destroy }
-                ^^^^^^^^^^^^^^^^^
-db/seeds.rb:3:18: C: Style/SymbolProc: Pass &:destroy as an argument to map instead of a block.
-Response.all.map { |r| r.destroy }
-                 ^^^^^^^^^^^^^^^^^
-db/seeds.rb:4:16: C: Style/SymbolProc: Pass &:destroy as an argument to map instead of a block.
-Choice.all.map { |c| c.destroy }
-               ^^^^^^^^^^^^^^^^^
-db/seeds.rb:5:18: C: Style/SymbolProc: Pass &:destroy as an argument to map instead of a block.
-Question.all.map { |q| q.destroy }
-                 ^^^^^^^^^^^^^^^^^
-db/seeds.rb:6:16: C: Style/SymbolProc: Pass &:destroy as an argument to map instead of a block.
-Survey.all.map { |c| c.destroy }
-               ^^^^^^^^^^^^^^^^^
-db/seeds.rb:7:16: C: Style/SymbolProc: Pass &:destroy as an argument to map instead of a block.
-Career.all.map { |s| s.destroy }
-               ^^^^^^^^^^^^^^^^^
-db/seeds.rb:9:1: C: Layout/LeadingCommentSpace: Missing space after #.
-#Create career
-^^^^^^^^^^^^^^
-db/seeds.rb:15:1: C: Naming/VariableName: Use snake_case for variable names.
+db/seeds.rb:17:1: C: Naming/VariableName: Use snake_case for variable names.
 educFisica = Career.create(name: 'Educación Física')
 ^^^^^^^^^^
-db/seeds.rb:16:31: C: Layout/SpaceAfterColon: Space missing after colon.
-filosofia = Career.create(name:'Filosofía')
-                              ^
-db/seeds.rb:28:121: C: Layout/LineLength: Line is too long. [163/120]
+db/seeds.rb:30:121: C: Layout/LineLength: Line is too long. [163/120]
 q1 = Question.create(name: 'Pregunta 1) ', description: 'Me trasladaría a una zona agrícola-ganadera para ejercer mi profesión.', number: 1, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:29:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q1 = Choice.create(text: 'Si', question: q1)
-^
-db/seeds.rb:29:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q1 = Choice.create(text: 'Si', question: q1)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:30:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q1, career: veterinaria)
-^^
-db/seeds.rb:30:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q1, career: veterinaria)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:31:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q1, career: agronomia)
-^^
-db/seeds.rb:31:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q1, career: agronomia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:32:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q1 = Choice.create(text: 'No', question: q1) 
-^
-db/seeds.rb:32:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q1 = Choice.create(text: 'No', question: q1) 
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:32:2: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q1. Did you mean ch2_q15?
-	ch2_q1 = Choice.create(text: 'No', question: q1) 
- ^^^^^^
-db/seeds.rb:32:50: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-	ch2_q1 = Choice.create(text: 'No', question: q1) 
-                                                 ^
-db/seeds.rb:34:121: C: Layout/LineLength: Line is too long. [176/120]
+db/seeds.rb:34:1: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q1. Did you mean ch2_q15?
+ch2_q1 = Choice.create(text: 'No', question: q1)
+^^^^^^
+db/seeds.rb:36:121: C: Layout/LineLength: Line is too long. [176/120]
 q2 = Question.create(name: 'Pregunta 2) ', description: 'Tengo buena memoria y no me cuesta estudiar y retener fórmulas y palabras técnicas.', number: 2, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:35:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q2 = Choice.create(text: 'Si', question: q2)
-^
-db/seeds.rb:35:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q2 = Choice.create(text: 'Si', question: q2)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:36:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q2, career: fisica)
-^^
-db/seeds.rb:36:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q2, career: fisica)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:37:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q2, career: matematicas)
-^^
-db/seeds.rb:37:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q2, career: matematicas)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:38:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q2, career: quimica)
-^^
-db/seeds.rb:38:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q2, career: quimica)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:39:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q2, career: computacion)
-^^
-db/seeds.rb:39:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q2, career: computacion)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:40:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q2 = Choice.create(text: 'No', question: q2) 	
-^
-db/seeds.rb:40:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q2 = Choice.create(text: 'No', question: q2) 	
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:40:2: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q2. Did you mean ch2_q12?
-	ch2_q2 = Choice.create(text: 'No', question: q2) 	
- ^^^^^^
-db/seeds.rb:40:50: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-	ch2_q2 = Choice.create(text: 'No', question: q2) 	
-                                                 ^^
-db/seeds.rb:42:121: C: Layout/LineLength: Line is too long. [172/120]
+db/seeds.rb:42:1: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q2. Did you mean ch2_q12?
+ch2_q2 = Choice.create(text: 'No', question: q2)
+^^^^^^
+db/seeds.rb:44:121: C: Layout/LineLength: Line is too long. [172/120]
 q3 = Question.create(name: 'Pregunta 3) ', description: 'Me gusta escribir. En general mis trabajos son largos y están bien organizados.', number: 3, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:43:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q3 = Choice.create(text: 'Si', question: q3)
-^
-db/seeds.rb:43:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q3 = Choice.create(text: 'Si', question: q3)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:44:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q3, career: literatura)
-^^
-db/seeds.rb:44:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q3, career: literatura)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:45:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q3, career: historia)
-^^
-db/seeds.rb:45:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q3, career: historia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:46:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q3 = Choice.create(text: 'No', question: q3) 
-^
-db/seeds.rb:46:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q3 = Choice.create(text: 'No', question: q3) 
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:46:2: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q3. Did you mean ch2_q13?
-	ch2_q3 = Choice.create(text: 'No', question: q3) 
- ^^^^^^
-db/seeds.rb:46:50: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-	ch2_q3 = Choice.create(text: 'No', question: q3) 
-                                                 ^
-db/seeds.rb:48:121: C: Layout/LineLength: Line is too long. [161/120]
+db/seeds.rb:48:1: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q3. Did you mean ch2_q13?
+ch2_q3 = Choice.create(text: 'No', question: q3)
+^^^^^^
+db/seeds.rb:50:121: C: Layout/LineLength: Line is too long. [161/120]
 q4 = Question.create(name: 'Pregunta 4) ', description: 'Sé quien es Steven Hawking: Conozco y me atraen sus descubrimientos.', number: 4, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:49:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q4 = Choice.create(text: 'Si', question: q4)
-^
-db/seeds.rb:49:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q4 = Choice.create(text: 'Si', question: q4)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:50:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q4, career: fisica)
-^^
-db/seeds.rb:50:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q4, career: fisica)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:51:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q4 = Choice.create(text: 'No', question: q4)
-^
-db/seeds.rb:51:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q4 = Choice.create(text: 'No', question: q4)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:51:2: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q4. Did you mean ch2_q14?
-	ch2_q4 = Choice.create(text: 'No', question: q4)
- ^^^^^^
-db/seeds.rb:53:121: C: Layout/LineLength: Line is too long. [182/120]
+db/seeds.rb:53:1: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q4. Did you mean ch2_q14?
+ch2_q4 = Choice.create(text: 'No', question: q4)
+^^^^^^
+db/seeds.rb:55:121: C: Layout/LineLength: Line is too long. [182/120]
 q5 = Question.create(name: 'Pregunta 5) ', description: 'Me actualizo respecto de los avances tecnológicos y me intereso por investigar y conocer.', number: 5, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:54:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q5 = Choice.create(text: 'Si', question: q5)
-^
-db/seeds.rb:54:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q5 = Choice.create(text: 'Si', question: q5)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:55:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q5, career: computacion)
-^^
-db/seeds.rb:55:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q5, career: computacion)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:56:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q5 = Choice.create(text: 'No', question: q5)
-^
-db/seeds.rb:56:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q5 = Choice.create(text: 'No', question: q5)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:56:2: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q5. Did you mean ch2_q15?
-	ch2_q5 = Choice.create(text: 'No', question: q5)
- ^^^^^^
-db/seeds.rb:58:121: C: Layout/LineLength: Line is too long. [210/120]
+db/seeds.rb:58:1: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q5. Did you mean ch2_q15?
+ch2_q5 = Choice.create(text: 'No', question: q5)
+^^^^^^
+db/seeds.rb:60:121: C: Layout/LineLength: Line is too long. [210/120]
 q6 = Question.create(name: 'Pregunta 6) ', description: 'Sé quien es Andy Warhol y a qué movimiento artístico pertenece. Me apasiona conocer acerca del arte y sus exponentes.', number: 6, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:59:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q6 = Choice.create(text: 'Si', question: q6)
-^
-db/seeds.rb:59:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q6 = Choice.create(text: 'Si', question: q6)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:60:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q6, career: arte)
-^^
-db/seeds.rb:60:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q6, career: arte)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:61:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q6 = Choice.create(text: 'No', question: q6)
-^
-db/seeds.rb:61:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q6 = Choice.create(text: 'No', question: q6)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:61:2: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q6. Did you mean ch2_q9?
-	ch2_q6 = Choice.create(text: 'No', question: q6)
- ^^^^^^
-db/seeds.rb:63:121: C: Layout/LineLength: Line is too long. [200/120]
+db/seeds.rb:63:1: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q6. Did you mean ch2_q9?
+ch2_q6 = Choice.create(text: 'No', question: q6)
+^^^^^^
+db/seeds.rb:65:121: C: Layout/LineLength: Line is too long. [200/120]
 q7 = Question.create(name: 'Pregunta 7) ', description: 'En general me intereso por las dificultades que ha tenido que atravesar la humanidad y cómo lo ha superado.', number: 7, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:64:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q7 = Choice.create(text: 'Si', question: q7)
-^
-db/seeds.rb:64:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q7 = Choice.create(text: 'Si', question: q7)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:65:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q7, career: historia)
-^^
-db/seeds.rb:65:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q7, career: historia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:66:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q7 = Choice.create(text: 'No', question: q7)
-^
-db/seeds.rb:66:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q7 = Choice.create(text: 'No', question: q7)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:66:2: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q7. Did you mean ch2_q9?
-	ch2_q7 = Choice.create(text: 'No', question: q7)
- ^^^^^^
-db/seeds.rb:68:121: C: Layout/LineLength: Line is too long. [205/120]
+db/seeds.rb:68:1: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q7. Did you mean ch2_q9?
+ch2_q7 = Choice.create(text: 'No', question: q7)
+^^^^^^
+db/seeds.rb:70:121: C: Layout/LineLength: Line is too long. [205/120]
 q8 = Question.create(name: 'Pregunta 8) ', description: 'Me apasiona leer y no me importa si el libro que elijo tiene muchas páginas, para mí es un gran entretenimiento.', number: 8, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:69:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q8 = Choice.create(text: 'Si', question: q8)
-^
-db/seeds.rb:69:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q8 = Choice.create(text: 'Si', question: q8)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:70:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q8, career: literatura)
-^^
-db/seeds.rb:70:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q8, career: literatura)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:71:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q8, career: historia)
-^^
-db/seeds.rb:71:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q8, career: historia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:72:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q8 = Choice.create(text: 'No', question: q8) 
-^
-db/seeds.rb:72:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q8 = Choice.create(text: 'No', question: q8) 
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:72:2: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q8. Did you mean ch2_q9?
-	ch2_q8 = Choice.create(text: 'No', question: q8) 
- ^^^^^^
-db/seeds.rb:72:50: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-	ch2_q8 = Choice.create(text: 'No', question: q8) 
-                                                 ^
-db/seeds.rb:74:121: C: Layout/LineLength: Line is too long. [170/120]
+db/seeds.rb:74:1: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q8. Did you mean ch2_q9?
+ch2_q8 = Choice.create(text: 'No', question: q8)
+^^^^^^
+db/seeds.rb:76:121: C: Layout/LineLength: Line is too long. [170/120]
 q9 = Question.create(name: 'Pregunta 9) ', description: 'Me atrae conocer los procesos y las áreas que hacen funcionar a las empresas.', number: 9, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:75:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q9 = Choice.create(text: 'Si', question: q9)
-^
-db/seeds.rb:75:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q9 = Choice.create(text: 'Si', question: q9)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:76:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q9, career: economia)
-^^
-db/seeds.rb:76:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q9, career: economia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:77:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q9 = Choice.create(text: 'No', question: q9)
-^
-db/seeds.rb:77:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q9 = Choice.create(text: 'No', question: q9)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:77:2: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q9. Did you mean ch2_q8?
-	ch2_q9 = Choice.create(text: 'No', question: q9)
- ^^^^^^
-db/seeds.rb:79:121: C: Layout/LineLength: Line is too long. [172/120]
+db/seeds.rb:79:1: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q9. Did you mean ch2_q8?
+ch2_q9 = Choice.create(text: 'No', question: q9)
+^^^^^^
+db/seeds.rb:81:121: C: Layout/LineLength: Line is too long. [172/120]
 q10 = Question.create(name: 'Pregunta 10) ', description: 'Me siento identificado con el pensamiento de algunos filósofos y escritores.', number: 10, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:80:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q10 = Choice.create(text: 'Si', question: q10)
-^
-db/seeds.rb:80:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q10 = Choice.create(text: 'Si', question: q10)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:81:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q10, career: filosofia)
-^^
-db/seeds.rb:81:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q10, career: filosofia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:82:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q10, career: historia)
-^^
-db/seeds.rb:82:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q10, career: historia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:83:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q10 = Choice.create(text: 'No', question: q10) 
-^
-db/seeds.rb:83:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q10 = Choice.create(text: 'No', question: q10) 
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:83:2: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q10. Did you mean ch2_q1?
-	ch2_q10 = Choice.create(text: 'No', question: q10) 
- ^^^^^^^
-db/seeds.rb:83:52: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-	ch2_q10 = Choice.create(text: 'No', question: q10) 
-                                                   ^
-db/seeds.rb:85:121: C: Layout/LineLength: Line is too long. [193/120]
+db/seeds.rb:85:1: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q10. Did you mean ch2_q1?
+ch2_q10 = Choice.create(text: 'No', question: q10)
+^^^^^^^
+db/seeds.rb:87:121: C: Layout/LineLength: Line is too long. [193/120]
 q11 = Question.create(name: 'Pregunta 11) ', description: 'Me encanta estudiar el cuerpo humano y conocer cómo funciona. Además, no me impresiona la sangre.', number: 11, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:86:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q11 = Choice.create(text: 'Si', question: q11)
-^
-db/seeds.rb:86:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q11 = Choice.create(text: 'Si', question: q11)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:87:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q11, career: medicina)
-^^
-db/seeds.rb:87:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q11, career: medicina)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:88:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q11 = Choice.create(text: 'No', question: q11)
-^
-db/seeds.rb:88:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q11 = Choice.create(text: 'No', question: q11)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:88:2: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q11. Did you mean ch2_q1?
-	ch2_q11 = Choice.create(text: 'No', question: q11)
- ^^^^^^^
-db/seeds.rb:90:121: C: Layout/LineLength: Line is too long. [194/120]
+db/seeds.rb:90:1: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q11. Did you mean ch2_q1?
+ch2_q11 = Choice.create(text: 'No', question: q11)
+^^^^^^^
+db/seeds.rb:92:121: C: Layout/LineLength: Line is too long. [194/120]
 q12 = Question.create(name: 'Pregunta 12) ', description: 'Si pudiera elegir, pasaría mucho tiempo diseñando novedosos objetos o edificios en mi computadora.', number: 12, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:91:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q12 = Choice.create(text: 'Si', question: q12)
-^
-db/seeds.rb:91:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q12 = Choice.create(text: 'Si', question: q12)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:92:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q12, career: computacion)
-^^
-db/seeds.rb:92:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q12, career: computacion)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:93:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q12, career: arquitectura)
-^^
-db/seeds.rb:93:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q12, career: arquitectura)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:94:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q12 = Choice.create(text: 'No', question: q12) 
-^
-db/seeds.rb:94:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q12 = Choice.create(text: 'No', question: q12) 
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:94:2: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q12. Did you mean ch2_q2?
-	ch2_q12 = Choice.create(text: 'No', question: q12) 
- ^^^^^^^
-db/seeds.rb:94:52: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-	ch2_q12 = Choice.create(text: 'No', question: q12) 
-                                                   ^
-db/seeds.rb:96:121: C: Layout/LineLength: Line is too long. [143/120]
+db/seeds.rb:96:1: W: Lint/UselessAssignment: Useless assignment to variable - ch2_q12. Did you mean ch2_q2?
+ch2_q12 = Choice.create(text: 'No', question: q12)
+^^^^^^^
+db/seeds.rb:98:121: C: Layout/LineLength: Line is too long. [143/120]
 q13 = Question.create(name: 'Pregunta 13) ', description: 'Si mi blog fuera temático, trataría acerca de: ', number: 13, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:97:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q13 = Choice.create(text: 'La importancia de la expresión artística en el desarrollo de la identidad de los pueblos.', question: q13)
-^
-db/seeds.rb:97:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q13 = Choice.create(text: 'La importancia de la expresión artística en el desarrollo de la identidad de los pueblos.', question: q13)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:97:120: C: Layout/LineLength: Line is too long. [139/120]
-	ch1_q13 = Choice.create(text: 'La importancia de la expresión artística en el desarrollo de la identidad de los pueblos.', question: q13) ...
-                                                                                                                       ^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:98:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q13, career: sociologia)
-^^
-db/seeds.rb:98:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q13, career: sociologia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:99:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q13 = Choice.create(text: 'La arquelogía urbana como forma de aprender acerca de la historia cultural de una ciudad.', question: q13)
-^
-db/seeds.rb:99:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q13 = Choice.create(text: 'La arquelogía urbana como forma de aprender acerca de la historia cultural de una ciudad.', question: q13)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:99:120: C: Layout/LineLength: Line is too long. [139/120]
-	ch2_q13 = Choice.create(text: 'La arquelogía urbana como forma de aprender acerca de la historia cultural de una ciudad.', question: q13) ...
-                                                                                                                       ^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:100:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch2_q13, career: historia)
-^^
-db/seeds.rb:100:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch2_q13, career: historia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:101:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch3_q13 = Choice.create(text: 'La tecnología satelital en un proyecto para descubrir actividad volcánica para prevenir catástrofes climáticas.', question: q13) 
-^
-db/seeds.rb:101:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch3_q13 = Choice.create(text: 'La tecnología satelital en un proyecto para descubrir actividad volcánica para prevenir catástrofes climáticas.', question: q13) 
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:101:120: C: Layout/LineLength: Line is too long. [162/120]
-	ch3_q13 = Choice.create(text: 'La tecnología satelital en un proyecto para descubrir actividad volcánica para prevenir catástrofes climáticas.', question: q13)  ...
-                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:101:161: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-	ch3_q13 = Choice.create(text: 'La tecnología satelital en un proyecto para descubrir actividad volcánica para prevenir catástrofes climáticas.', question: q13) 
-                                                                                                                                                                ^
-db/seeds.rb:102:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch3_q13, career: computacion)
-^^
-db/seeds.rb:102:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch3_q13, career: computacion)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:103:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch3_q13, career: geologia)
-^^
-db/seeds.rb:103:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch3_q13, career: geologia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:104:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch4_q13 = Choice.create(text: 'Ninguna de las opciones.', question: q13)
-^
-db/seeds.rb:104:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch4_q13 = Choice.create(text: 'Ninguna de las opciones.', question: q13)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:104:2: W: Lint/UselessAssignment: Useless assignment to variable - ch4_q13. Did you mean ch4_q15?
-	ch4_q13 = Choice.create(text: 'Ninguna de las opciones.', question: q13)
- ^^^^^^^
-db/seeds.rb:106:121: C: Layout/LineLength: Line is too long. [172/120]
+db/seeds.rb:99:121: C: Layout/LineLength: Line is too long. [137/120]
+ch1_q13 = Choice.create(text: 'La importancia de la expresión artística en el desarrollo de la identidad de los pueblos.', question: q13)
+                                                                                                                        ^^^^^^^^^^^^^^^^^
+db/seeds.rb:101:121: C: Layout/LineLength: Line is too long. [137/120]
+ch2_q13 = Choice.create(text: 'La arquelogía urbana como forma de aprender acerca de la historia cultural de una ciudad.', question: q13)
+                                                                                                                        ^^^^^^^^^^^^^^^^^
+db/seeds.rb:103:121: C: Layout/LineLength: Line is too long. [159/120]
+ch3_q13 = Choice.create(text: 'La tecnología satelital en un proyecto para descubrir actividad volcánica para prevenir catástrofes climáticas.', question: q13)
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:106:1: W: Lint/UselessAssignment: Useless assignment to variable - ch4_q13. Did you mean ch4_q15?
+ch4_q13 = Choice.create(text: 'Ninguna de las opciones.', question: q13)
+^^^^^^^
+db/seeds.rb:108:121: C: Layout/LineLength: Line is too long. [172/120]
 q14 = Question.create(name: 'Pregunta 14) ', description: 'Integraría un equipo de trabajo encargado de producir un audiovisual sobre: ', number: 14, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:107:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q14 = Choice.create(text: 'La práctica de deportes y su influencia positiva en el estado de ánimo de las personas.', question: q14)
-^
-db/seeds.rb:107:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q14 = Choice.create(text: 'La práctica de deportes y su influencia positiva en el estado de ánimo de las personas.', question: q14)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:107:120: C: Layout/LineLength: Line is too long. [137/120]
-	ch1_q14 = Choice.create(text: 'La práctica de deportes y su influencia positiva en el estado de ánimo de las personas.', question: q14) ...
-                                                                                                                       ^^^^^^^^^^^^^^^^^
-db/seeds.rb:108:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q14, career: educFisica)
-^^
-db/seeds.rb:108:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q14, career: educFisica)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:108:43: C: Naming/VariableName: Use snake_case for variable names.
-		Outcome.create(choice: ch1_q14, career: educFisica)
-                                          ^^^^^^^^^^
-db/seeds.rb:109:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q14 = Choice.create(text: 'Los pensadores del siglo XX y su aporte a la gestión de las organizaciones.', question: q14)
-^
-db/seeds.rb:109:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q14 = Choice.create(text: 'Los pensadores del siglo XX y su aporte a la gestión de las organizaciones.', question: q14)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:109:120: C: Layout/LineLength: Line is too long. [125/120]
-	ch2_q14 = Choice.create(text: 'Los pensadores del siglo XX y su aporte a la gestión de las organizaciones.', question: q14) ...
-                                                                                                                       ^^^^^
-db/seeds.rb:110:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch2_q14, career: filosofia)
-^^
-db/seeds.rb:110:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch2_q14, career: filosofia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:111:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch2_q14, career: historia)
-^^
-db/seeds.rb:111:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch2_q14, career: historia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:112:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch3_q14 = Choice.create(text: 'Las mascotas y su incidencia en la calidad de vida de las personas no videntes.', question: q14) 
-^
-db/seeds.rb:112:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch3_q14 = Choice.create(text: 'Las mascotas y su incidencia en la calidad de vida de las personas no videntes.', question: q14) 
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:112:120: C: Layout/LineLength: Line is too long. [130/120]
-	ch3_q14 = Choice.create(text: 'Las mascotas y su incidencia en la calidad de vida de las personas no videntes.', question: q14)  ...
-                                                                                                                       ^^^^^^^^^^
-db/seeds.rb:112:129: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-	ch3_q14 = Choice.create(text: 'Las mascotas y su incidencia en la calidad de vida de las personas no videntes.', question: q14) 
-                                                                                                                                ^
-db/seeds.rb:113:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch3_q14, career: veterinaria)
-^^
-db/seeds.rb:113:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch3_q14, career: veterinaria)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:114:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch4_q14 = Choice.create(text: 'El uso de la PC como herramienta para el control de los procesos industriales.', question: q14)
-^
-db/seeds.rb:114:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch4_q14 = Choice.create(text: 'El uso de la PC como herramienta para el control de los procesos industriales.', question: q14)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:114:120: C: Layout/LineLength: Line is too long. [128/120]
-	ch4_q14 = Choice.create(text: 'El uso de la PC como herramienta para el control de los procesos industriales.', question: q14) ...
-                                                                                                                       ^^^^^^^^
-db/seeds.rb:115:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch4_q14, career: computacion)
-^^
-db/seeds.rb:115:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch4_q14, career: computacion)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:116:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch5_q14 = Choice.create(text: 'Procesos productivos de una empresa', question: q14)
-^
-db/seeds.rb:116:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch5_q14 = Choice.create(text: 'Procesos productivos de una empresa', question: q14)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:117:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch5_q14, career: economia)
-^^
-db/seeds.rb:117:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch5_q14, career: economia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:118:1: C: Layout/IndentationStyle: Tab detected in indentation.
-  	ch6_q14 = Choice.create(text: 'Ninguna de las opciones.', question: q14)
-^^^
-db/seeds.rb:118:4: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-  	ch6_q14 = Choice.create(text: 'Ninguna de las opciones.', question: q14)
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:118:4: W: Lint/UselessAssignment: Useless assignment to variable - ch6_q14. Did you mean ch6_q15?
-  	ch6_q14 = Choice.create(text: 'Ninguna de las opciones.', question: q14)
-   ^^^^^^^
-db/seeds.rb:119:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-db/seeds.rb:120:121: C: Layout/LineLength: Line is too long. [130/120]
+db/seeds.rb:109:121: C: Layout/LineLength: Line is too long. [135/120]
+ch1_q14 = Choice.create(text: 'La práctica de deportes y su influencia positiva en el estado de ánimo de las personas.', question: q14)
+                                                                                                                        ^^^^^^^^^^^^^^^
+db/seeds.rb:110:41: C: Naming/VariableName: Use snake_case for variable names.
+Outcome.create(choice: ch1_q14, career: educFisica)
+                                        ^^^^^^^^^^
+db/seeds.rb:111:121: C: Layout/LineLength: Line is too long. [123/120]
+ch2_q14 = Choice.create(text: 'Los pensadores del siglo XX y su aporte a la gestión de las organizaciones.', question: q14)
+                                                                                                                        ^^^
+db/seeds.rb:114:121: C: Layout/LineLength: Line is too long. [127/120]
+ch3_q14 = Choice.create(text: 'Las mascotas y su incidencia en la calidad de vida de las personas no videntes.', question: q14)
+                                                                                                                        ^^^^^^^
+db/seeds.rb:116:121: C: Layout/LineLength: Line is too long. [126/120]
+ch4_q14 = Choice.create(text: 'El uso de la PC como herramienta para el control de los procesos industriales.', question: q14)
+                                                                                                                        ^^^^^^
+db/seeds.rb:120:1: W: Lint/UselessAssignment: Useless assignment to variable - ch6_q14. Did you mean ch6_q15?
+ch6_q14 = Choice.create(text: 'Ninguna de las opciones.', question: q14)
+^^^^^^^
+db/seeds.rb:122:121: C: Layout/LineLength: Line is too long. [130/120]
 q15 = Question.create(name: 'Pregunta 15) ', description: 'Sería importante destacarme como: ', number: 15, type: 'SINGLE-CHOICE')
                                                                                                                         ^^^^^^^^^^
-db/seeds.rb:121:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch1_q15 = Choice.create(text: 'Director de una investigación técnico científica', question: q15)
-^
-db/seeds.rb:121:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch1_q15 = Choice.create(text: 'Director de una investigación técnico científica', question: q15)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:122:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q15, career: fisica)
-^^
-db/seeds.rb:122:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q15, career: fisica)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:123:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q15, career: quimica)
-^^
-db/seeds.rb:123:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q15, career: quimica)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:124:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch1_q15, career: computacion)
-^^
-db/seeds.rb:124:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch1_q15, career: computacion)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:125:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch2_q15 = Choice.create(text: 'Gerente general de una empresa reconocida por su responsabilidad social.', question: q15)
-^
-db/seeds.rb:125:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch2_q15 = Choice.create(text: 'Gerente general de una empresa reconocida por su responsabilidad social.', question: q15)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:125:120: C: Layout/LineLength: Line is too long. [122/120]
-	ch2_q15 = Choice.create(text: 'Gerente general de una empresa reconocida por su responsabilidad social.', question: q15) ...
-                                                                                                                       ^^
-db/seeds.rb:126:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch2_q15, career: economia)
-^^
-db/seeds.rb:126:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch2_q15, career: economia)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:127:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch3_q15 = Choice.create(text: 'Un deportista famoso por su destreza física y su ética profesional.', question: q15) 
-^
-db/seeds.rb:127:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch3_q15 = Choice.create(text: 'Un deportista famoso por su destreza física y su ética profesional.', question: q15) 
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:127:117: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-	ch3_q15 = Choice.create(text: 'Un deportista famoso por su destreza física y su ética profesional.', question: q15) 
-                                                                                                                    ^
-db/seeds.rb:128:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch3_q15, career: educFisica)
-^^
-db/seeds.rb:128:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch3_q15, career: educFisica)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:128:43: C: Naming/VariableName: Use snake_case for variable names.
-		Outcome.create(choice: ch3_q15, career: educFisica)
-                                          ^^^^^^^^^^
-db/seeds.rb:129:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch4_q15 = Choice.create(text: 'Experto en la detección precoz de enfermedades neurológicas en niños.', question: q15)
-^
-db/seeds.rb:129:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch4_q15 = Choice.create(text: 'Experto en la detección precoz de enfermedades neurológicas en niños.', question: q15)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:130:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch4_q15, career: medicina)
-^^
-db/seeds.rb:130:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch4_q15, career: medicina)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:131:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	ch5_q15 = Choice.create(text: 'Un agente de prensa audaz, número uno en el ranking de notas a celebridades.', question: q15)
-^
-db/seeds.rb:131:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-	ch5_q15 = Choice.create(text: 'Un agente de prensa audaz, número uno en el ranking de notas a celebridades.', question: q15)
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:131:120: C: Layout/LineLength: Line is too long. [126/120]
-	ch5_q15 = Choice.create(text: 'Un agente de prensa audaz, número uno en el ranking de notas a celebridades.', question: q15) ...
-                                                                                                                       ^^^^^^
-db/seeds.rb:132:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Outcome.create(choice: ch5_q15, career: periodismo)
-^^
-db/seeds.rb:132:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-		Outcome.create(choice: ch5_q15, career: periodismo)
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:133:1: C: Layout/IndentationStyle: Tab detected in indentation.
-  	ch6_q15 = Choice.create(text: 'Ninguna de las opciones.', question: q15)
-^^^
-db/seeds.rb:133:4: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-  	ch6_q15 = Choice.create(text: 'Ninguna de las opciones.', question: q15)
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:133:4: W: Lint/UselessAssignment: Useless assignment to variable - ch6_q15. Did you mean ch6_q14?
-  	ch6_q15 = Choice.create(text: 'Ninguna de las opciones.', question: q15)
-   ^^^^^^^
-models/career.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+db/seeds.rb:130:41: C: Naming/VariableName: Use snake_case for variable names.
+Outcome.create(choice: ch3_q15, career: educFisica)
+                                        ^^^^^^^^^^
+db/seeds.rb:133:121: C: Layout/LineLength: Line is too long. [124/120]
+ch5_q15 = Choice.create(text: 'Un agente de prensa audaz, número uno en el ranking de notas a celebridades.', question: q15)
+                                                                                                                        ^^^^
+db/seeds.rb:135:1: W: Lint/UselessAssignment: Useless assignment to variable - ch6_q15. Did you mean ch6_q14?
+ch6_q15 = Choice.create(text: 'Ninguna de las opciones.', question: q15)
+^^^^^^^
+models/career.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
 class Career < Sequel::Model
 ^^^^^
-models/career.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-class Career < Sequel::Model
-^
-models/career.rb:2:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	plugin :validation_helpers
-^
-models/career.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-	plugin :validation_helpers
-^
-models/career.rb:3:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	one_to_many :outcomes
-^
-models/career.rb:3:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-	one_to_many :outcomes
-^
-models/career.rb:4:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	one_to_many :surveys
-^
-models/career.rb:4:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-	one_to_many :surveys
-^
-models/career.rb:5:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	def validate
-^
-models/career.rb:5:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-	def validate
-^
-models/career.rb:6:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		super 
-^^
-models/career.rb:6:2: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-		super 
- ^
-models/career.rb:6:8: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-		super 
-       ^
-models/career.rb:7:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		validates_presence :name
-^^
-models/career.rb:8:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	end	
-^
-models/career.rb:8:5: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-	end	
-    ^
-models/career.rb:9:1: C: Layout/IndentationStyle: Tab detected in indentation.
-models/career.rb:9:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-models/career.rb:10:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	def number_of_surveys_between_two_dates(initial_date, final_date)
-^
-models/career.rb:10:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-	def number_of_surveys_between_two_dates(initial_date, final_date)
-^
-models/career.rb:11:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		result = {}
-^^
-models/career.rb:11:2: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-		result = {}
- ^
-models/career.rb:12:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		if the_dates_are_valid?(initial_date, final_date)
-^^
-models/career.rb:13:1: C: Layout/IndentationStyle: Tab detected in indentation.
-			result = {"name" => name, "number" => 0}
-^^^
-models/career.rb:13:3: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-			result = {"name" => name, "number" => 0}
-  ^
-models/career.rb:13:13: C: Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
-			result = {"name" => name, "number" => 0}
-            ^
-models/career.rb:13:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-			result = {"name" => name, "number" => 0}
-             ^^^^^^
-models/career.rb:13:30: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-			result = {"name" => name, "number" => 0}
-                             ^^^^^^^^
-models/career.rb:13:43: C: Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-			result = {"name" => name, "number" => 0}
-                                          ^
-models/career.rb:14:1: C: Layout/IndentationStyle: Tab detected in indentation.
-			surveys.map { |survey|  survey.is_created_at_between(initial_date, final_date) && result["number"] += 1 }
-^^^
-models/career.rb:14:26: C: Layout/ExtraSpacing: Unnecessary spacing detected.
-			surveys.map { |survey|  survey.is_created_at_between(initial_date, final_date) && result["number"] += 1 }
-                         ^
-models/career.rb:14:93: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-			surveys.map { |survey|  survey.is_created_at_between(initial_date, final_date) && result["number"] += 1 }
-                                                                                            ^^^^^^^^
-models/career.rb:15:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		end
-^^
-models/career.rb:16:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		return result
-^^
-models/career.rb:16:3: C: Style/RedundantReturn: Redundant return detected.
-		return result
-  ^^^^^^
-models/career.rb:17:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	end
-^
-models/career.rb:19:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	def the_dates_are_valid?(initial_date, final_date)
-^
-models/career.rb:19:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-	def the_dates_are_valid?(initial_date, final_date)
-^
-models/career.rb:20:1: C: Layout/IndentationStyle: Tab detected in indentation.
-		Time.parse(initial_date.to_s) <= Time.parse(final_date.to_s)
-^^
-models/career.rb:20:2: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-		Time.parse(initial_date.to_s) <= Time.parse(final_date.to_s)
- ^
-models/career.rb:21:1: C: Layout/IndentationStyle: Tab detected in indentation.
-	end
-^
-models/career.rb:23:1: C: Layout/TrailingEmptyLines: 1 trailing blank lines detected.
-models/choice.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+models/choice.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
 class Choice < Sequel::Model
 ^^^^^
-models/choice.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-class Choice < Sequel::Model
-^
-models/choice.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    plugin :validation_helpers
-^^^^
-models/choice.rb:3:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    many_to_one :question
-^^^^
-models/choice.rb:4:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    one_to_many :outcomes
-^^^^
-models/choice.rb:5:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    one_to_many :responses
-^^^^
-models/choice.rb:6:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def validate 
-^^^^
-models/choice.rb:6:17: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-    def validate 
-                ^
-models/choice.rb:7:1: C: Layout/IndentationStyle: Tab detected in indentation.
-    	super
-^^^^^
-models/choice.rb:7:5: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-    	super
-    ^
-models/choice.rb:8:1: C: Layout/IndentationStyle: Tab detected in indentation.
-    	errors.add(:text,'El campo texto no puede ser vacio.') if !text || text.empty?
-^^^^^
-models/choice.rb:8:22: C: Layout/SpaceAfterComma: Space missing after comma.
-    	errors.add(:text,'El campo texto no puede ser vacio.') if !text || text.empty?
-                     ^
-models/choice.rb:10:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
-models/init.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-require_relative 'post'
-^
-models/outcome.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+models/outcome.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
 class Outcome < Sequel::Model
 ^^^^^
-models/outcome.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-class Outcome < Sequel::Model
-^
-models/outcome.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    many_to_one :choice
-^^^^
-models/outcome.rb:3:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    many_to_one :career
-^^^^
-models/post.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-class Post < Sequel::Model
-^
-models/question.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+models/question.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
 class Question < Sequel::Model
 ^^^^^
-models/question.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-class Question < Sequel::Model
-^
-models/question.rb:5:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-models/question.rb:7:3: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-     super
-  ^^^
-models/question.rb:8:25: C: Style/SymbolArray: Use %i or %I for an array of symbols.
-     validates_presence [:name, :description, :number, :type]
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-models/response.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+models/response.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
 class Response < Sequel::Model
 ^^^^^
-models/response.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-class Response < Sequel::Model
-^
-models/response.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    many_to_one     :question 
-^^^^
-models/response.rb:2:30: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-    many_to_one     :question 
-                             ^
-models/response.rb:3:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    many_to_one     :survey
-^^^^
-models/response.rb:4:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    many_to_one	    :choice
-^^^^
-models/survey.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-models/survey.rb:2:1: C: Layout/LeadingEmptyLines: Unnecessary blank line at the beginning of the source.
+models/survey.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
 class Survey < Sequel::Model
 ^^^^^
-models/survey.rb:2:1: C: Style/Documentation: Missing top-level class documentation comment.
-class Survey < Sequel::Model
-^^^^^
-models/survey.rb:3:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    plugin :validation_helpers
-^^^^
-models/survey.rb:4:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    one_to_many    :responses
-^^^^
-models/survey.rb:5:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    many_to_one    :career
-^^^^
-models/survey.rb:7:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def validate 
-^^^^
-models/survey.rb:7:17: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-    def validate 
-                ^
-models/survey.rb:8:1: C: Layout/IndentationStyle: Tab detected in indentation.
-    	super
-^^^^^
-models/survey.rb:8:5: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
-    	super
-    ^
-models/survey.rb:9:1: C: Layout/IndentationStyle: Tab detected in indentation.
-    	validates_presence :name
-^^^^^
-models/survey.rb:12:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def survey_result(careers)
-^^^^
-models/survey.rb:13:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-        evaluate_responses(careers).sort_by { |career, outcomes| outcomes }
-    ^^^^
-models/survey.rb:13:48: W: Lint/UnusedBlockArgument: Unused block argument - career. If it's necessary, use _ or _career as an argument name to indicate that it won't be used.
-        evaluate_responses(careers).sort_by { |career, outcomes| outcomes }
-                                               ^^^^^^
-models/survey.rb:16:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def evaluate_responses(careers)
-^^^^
-models/survey.rb:17:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-        career_weights = {}
-    ^^^^
-models/survey.rb:23:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def is_created_at_between(initial_date, final_date)
-^^^^
-models/survey.rb:23:9: C: Naming/PredicateName: Rename is_created_at_between to created_at_between?.
-    def is_created_at_between(initial_date, final_date)
-        ^^^^^^^^^^^^^^^^^^^^^
-models/survey.rb:24:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-        Time.parse(initial_date.to_s) <= created_at && created_at <= Time.parse(final_date.to_s)
-    ^^^^
-models/survey.rb:27:1: C: Layout/TrailingEmptyLines: 1 trailing blank lines detected.
-tests/models/careers_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-require File.expand_path '../../test_helper.rb', __FILE__
-^
-tests/models/careers_test.rb:1:14: C: Style/ExpandPathArguments: Use expand_path('../test_helper.rb', __dir__) instead of expand_path('../../test_helper.rb', __FILE__).
-require File.expand_path '../../test_helper.rb', __FILE__
-             ^^^^^^^^^^^
-tests/models/careers_test.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+models/survey.rb:24:7: C: Naming/PredicateName: Rename is_created_at_between to created_at_between?.
+  def is_created_at_between(initial_date, final_date)
+      ^^^^^^^^^^^^^^^^^^^^^
+tests/models/careers_test.rb:5:1: C: Style/Documentation: Missing top-level class documentation comment.
 class CareerTest < MiniTest::Unit::TestCase
 ^^^^^
-tests/models/careers_test.rb:4:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-   MiniTest::Unit::TestCase
-^^^
-tests/models/careers_test.rb:4:20: W: Lint/Void: Variable TestCase used in void context.
-   MiniTest::Unit::TestCase
-                   ^^^^^^^^
-tests/models/careers_test.rb:6:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-   def test_career_has_many_surveys
-^^^
-tests/models/careers_test.rb:7:4: C: Layout/IndentationWidth: Use 2 (not 5) spaces for indentation.
-        clean_database
-   ^^^^^
-tests/models/careers_test.rb:14:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-   def test_career_name_must_not_be_empty
-^^^
-tests/models/careers_test.rb:14:4: C: Layout/EmptyLineBetweenDefs: Use empty lines between method definitions.
-   def test_career_name_must_not_be_empty
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/careers_test.rb:15:4: C: Layout/IndentationWidth: Use 2 (not 5) spaces for indentation.
-        clean_database
-   ^^^^^
-tests/models/careers_test.rb:20:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-   def test_method_number_of_surveys_between_two_dates
-^^^
-tests/models/careers_test.rb:20:4: C: Layout/EmptyLineBetweenDefs: Use empty lines between method definitions.
-   def test_method_number_of_surveys_between_two_dates
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/careers_test.rb:20:4: C: Metrics/AbcSize: Assignment Branch Condition size for test_method_number_of_surveys_between_two_dates is too high. [<5, 19, 0> 19.65/17]
-   def test_method_number_of_surveys_between_two_dates ...
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/careers_test.rb:20:4: C: Metrics/MethodLength: Method has too many lines. [11/10]
-   def test_method_number_of_surveys_between_two_dates ...
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/careers_test.rb:23:64: C: Layout/SpaceAfterColon: Space missing after colon.
-     Survey.create(name: 'U1', career_id: career.id, created_at:Time.parse('2021-10-11'))
-                                                               ^
-tests/models/careers_test.rb:24:64: C: Layout/SpaceAfterColon: Space missing after colon.
-     Survey.create(name: 'U2', career_id: career.id, created_at:Time.parse('2021-10-15'))
-                                                               ^
-tests/models/careers_test.rb:25:64: C: Layout/SpaceAfterColon: Space missing after colon.
-     Survey.create(name: 'U3', career_id: career.id, created_at:Time.parse('2021-10-18'))
-                                                               ^
-tests/models/careers_test.rb:26:64: C: Layout/SpaceAfterColon: Space missing after colon.
-     Survey.create(name: 'U4', career_id: career.id, created_at:Time.parse('2021-10-19'))
-                                                               ^
-tests/models/careers_test.rb:27:25: C: Layout/SpaceAfterColon: Space missing after colon.
-     c1 = Career.find(id:career.id)
-                        ^
-tests/models/careers_test.rb:28:6: C: Naming/VariableName: Use snake_case for variable names.
-     firstDate = '2021-10-11'
-     ^^^^^^^^^
-tests/models/careers_test.rb:29:6: C: Naming/VariableName: Use snake_case for variable names.
-     lastDate = '2021-10-19'
-     ^^^^^^^^
-tests/models/careers_test.rb:30:54: C: Naming/VariableName: Use snake_case for variable names.
-     result = c1.number_of_surveys_between_two_dates(firstDate,lastDate)['number']
-                                                     ^^^^^^^^^
-tests/models/careers_test.rb:30:63: C: Layout/SpaceAfterComma: Space missing after comma.
-     result = c1.number_of_surveys_between_two_dates(firstDate,lastDate)['number']
-                                                              ^
-tests/models/careers_test.rb:30:64: C: Naming/VariableName: Use snake_case for variable names.
-     result = c1.number_of_surveys_between_two_dates(firstDate,lastDate)['number']
+tests/models/careers_test.rb:6:19: W: Lint/Void: Variable TestCase used in void context.
+  MiniTest::Unit::TestCase
+                  ^^^^^^^^
+tests/models/careers_test.rb:24:3: C: Metrics/AbcSize: Assignment Branch Condition size for test_method_number_of_surveys_between_two_dates is too high. [<5, 19, 0> 19.65/17]
+  def test_method_number_of_surveys_between_two_dates ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/models/careers_test.rb:24:3: C: Metrics/MethodLength: Method has too many lines. [11/10]
+  def test_method_number_of_surveys_between_two_dates ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/models/careers_test.rb:32:5: C: Naming/VariableName: Use snake_case for variable names.
+    firstDate = '2021-10-11'
+    ^^^^^^^^^
+tests/models/careers_test.rb:33:5: C: Naming/VariableName: Use snake_case for variable names.
+    lastDate = '2021-10-19'
+    ^^^^^^^^
+tests/models/careers_test.rb:34:53: C: Naming/VariableName: Use snake_case for variable names.
+    result = c1.number_of_surveys_between_two_dates(firstDate, lastDate)['number']
+                                                    ^^^^^^^^^
+tests/models/careers_test.rb:34:64: C: Naming/VariableName: Use snake_case for variable names.
+    result = c1.number_of_surveys_between_two_dates(firstDate, lastDate)['number']
                                                                ^^^^^^^^
-tests/models/careers_test.rb:32:1: C: Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body end.
-tests/models/choices_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-require File.expand_path '../../test_helper.rb', __FILE__
-^
-tests/models/choices_test.rb:1:14: C: Style/ExpandPathArguments: Use expand_path('../test_helper.rb', __dir__) instead of expand_path('../../test_helper.rb', __FILE__).
-require File.expand_path '../../test_helper.rb', __FILE__
-             ^^^^^^^^^^^
-tests/models/choices_test.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+tests/models/choices_test.rb:5:1: C: Style/Documentation: Missing top-level class documentation comment.
 class ChoiceTest < MiniTest::Unit::TestCase
 ^^^^^
-tests/models/choices_test.rb:4:19: W: Lint/Void: Variable TestCase used in void context.
+tests/models/choices_test.rb:6:19: W: Lint/Void: Variable TestCase used in void context.
   MiniTest::Unit::TestCase
                   ^^^^^^^^
-tests/models/choices_test.rb:14:5: W: Lint/UselessAssignment: Useless assignment to variable - question.
-    question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
+tests/models/choices_test.rb:16:5: W: Lint/UselessAssignment: Useless assignment to variable - question.
+    question = Question.create(name: 'Pregunta 1', description: '¿Cuáles son tus gustos musicales?', number: 1, type: 'preferencias')
     ^^^^^^^^
-tests/models/choices_test.rb:14:36: C: Layout/SpaceAfterColon: Space missing after colon.
-    question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
-                                   ^
-tests/models/choices_test.rb:14:37: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
-                                    ^^^^^^^^^^^^
-tests/models/choices_test.rb:14:49: C: Layout/SpaceAfterComma: Space missing after comma.
-    question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
-                                                ^
-tests/models/choices_test.rb:14:61: C: Layout/SpaceAfterColon: Space missing after colon.
-    question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
-                                                            ^
-tests/models/choices_test.rb:14:62: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
-                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/choices_test.rb:14:97: C: Layout/SpaceAfterComma: Space missing after comma.
-    question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
-                                                                                                ^
-tests/models/choices_test.rb:14:104: C: Layout/SpaceAfterColon: Space missing after colon.
-    question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
-                                                                                                       ^
-tests/models/choices_test.rb:14:106: C: Layout/SpaceAfterComma: Space missing after comma.
-    question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
-                                                                                                         ^
-tests/models/choices_test.rb:14:111: C: Layout/SpaceAfterColon: Space missing after colon.
-    question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
-                                                                                                              ^
-tests/models/choices_test.rb:14:112: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
-                                                                                                               ^^^^^^^^^^^^^^
-tests/models/choices_test.rb:14:121: C: Layout/LineLength: Line is too long. [126/120]
-    question = Question.create(name:"Pregunta 1",description:"¿Cuáles son tus gustos musicales?",number:1,type:"preferencias")
-                                                                                                                        ^^^^^^
-tests/models/choices_test.rb:15:32: C: Layout/SpaceAfterColon: Space missing after colon.
-    choice = Choice.create(text:'estoy de acuerdo')
-                               ^
-tests/models/choices_test.rb:22:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/choices_test.rb:25:5: W: Lint/UselessAssignment: Useless assignment to variable - question.
-    question = Question.create(name:"Pregunta 2",description:"¿Te interesa el arte?",number:2,type:"preferencias")
+tests/models/choices_test.rb:16:121: C: Layout/LineLength: Line is too long. [133/120]
+    question = Question.create(name: 'Pregunta 1', description: '¿Cuáles son tus gustos musicales?', number: 1, type: 'preferencias')
+                                                                                                                        ^^^^^^^^^^^^^
+tests/models/choices_test.rb:27:5: W: Lint/UselessAssignment: Useless assignment to variable - question.
+    question = Question.create(name: 'Pregunta 2', description: '¿Te interesa el arte?', number: 2, type: 'preferencias')
     ^^^^^^^^
-tests/models/choices_test.rb:25:36: C: Layout/SpaceAfterColon: Space missing after colon.
-    question = Question.create(name:"Pregunta 2",description:"¿Te interesa el arte?",number:2,type:"preferencias")
-                                   ^
-tests/models/choices_test.rb:25:37: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    question = Question.create(name:"Pregunta 2",description:"¿Te interesa el arte?",number:2,type:"preferencias")
-                                    ^^^^^^^^^^^^
-tests/models/choices_test.rb:25:49: C: Layout/SpaceAfterComma: Space missing after comma.
-    question = Question.create(name:"Pregunta 2",description:"¿Te interesa el arte?",number:2,type:"preferencias")
-                                                ^
-tests/models/choices_test.rb:25:61: C: Layout/SpaceAfterColon: Space missing after colon.
-    question = Question.create(name:"Pregunta 2",description:"¿Te interesa el arte?",number:2,type:"preferencias")
-                                                            ^
-tests/models/choices_test.rb:25:62: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    question = Question.create(name:"Pregunta 2",description:"¿Te interesa el arte?",number:2,type:"preferencias")
-                                                             ^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/choices_test.rb:25:85: C: Layout/SpaceAfterComma: Space missing after comma.
-    question = Question.create(name:"Pregunta 2",description:"¿Te interesa el arte?",number:2,type:"preferencias")
-                                                                                    ^
-tests/models/choices_test.rb:25:92: C: Layout/SpaceAfterColon: Space missing after colon.
-    question = Question.create(name:"Pregunta 2",description:"¿Te interesa el arte?",number:2,type:"preferencias")
-                                                                                           ^
-tests/models/choices_test.rb:25:94: C: Layout/SpaceAfterComma: Space missing after comma.
-    question = Question.create(name:"Pregunta 2",description:"¿Te interesa el arte?",number:2,type:"preferencias")
-                                                                                             ^
-tests/models/choices_test.rb:25:99: C: Layout/SpaceAfterColon: Space missing after colon.
-    question = Question.create(name:"Pregunta 2",description:"¿Te interesa el arte?",number:2,type:"preferencias")
-                                                                                                  ^
-tests/models/choices_test.rb:25:100: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    question = Question.create(name:"Pregunta 2",description:"¿Te interesa el arte?",number:2,type:"preferencias")
-                                                                                                   ^^^^^^^^^^^^^^
-tests/models/choices_test.rb:26:32: C: Layout/SpaceAfterColon: Space missing after colon.
-    choice = Choice.create(text:'No me interesa')
-                               ^
-tests/models/choices_test.rb:37:36: C: Layout/SpaceAfterColon: Space missing after colon.
-    question = Question.create(name:"Pregunta 3",description:"¿Te interesa el deporte",number:2,type:"preferencias")
-                                   ^
-tests/models/choices_test.rb:37:37: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    question = Question.create(name:"Pregunta 3",description:"¿Te interesa el deporte",number:2,type:"preferencias")
-                                    ^^^^^^^^^^^^
-tests/models/choices_test.rb:37:49: C: Layout/SpaceAfterComma: Space missing after comma.
-    question = Question.create(name:"Pregunta 3",description:"¿Te interesa el deporte",number:2,type:"preferencias")
-                                                ^
-tests/models/choices_test.rb:37:61: C: Layout/SpaceAfterColon: Space missing after colon.
-    question = Question.create(name:"Pregunta 3",description:"¿Te interesa el deporte",number:2,type:"preferencias")
-                                                            ^
-tests/models/choices_test.rb:37:62: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    question = Question.create(name:"Pregunta 3",description:"¿Te interesa el deporte",number:2,type:"preferencias")
-                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/choices_test.rb:37:87: C: Layout/SpaceAfterComma: Space missing after comma.
-    question = Question.create(name:"Pregunta 3",description:"¿Te interesa el deporte",number:2,type:"preferencias")
-                                                                                      ^
-tests/models/choices_test.rb:37:94: C: Layout/SpaceAfterColon: Space missing after colon.
-    question = Question.create(name:"Pregunta 3",description:"¿Te interesa el deporte",number:2,type:"preferencias")
-                                                                                             ^
-tests/models/choices_test.rb:37:96: C: Layout/SpaceAfterComma: Space missing after comma.
-    question = Question.create(name:"Pregunta 3",description:"¿Te interesa el deporte",number:2,type:"preferencias")
-                                                                                               ^
-tests/models/choices_test.rb:37:101: C: Layout/SpaceAfterColon: Space missing after colon.
-    question = Question.create(name:"Pregunta 3",description:"¿Te interesa el deporte",number:2,type:"preferencias")
-                                                                                                    ^
-tests/models/choices_test.rb:37:102: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    question = Question.create(name:"Pregunta 3",description:"¿Te interesa el deporte",number:2,type:"preferencias")
-                                                                                                     ^^^^^^^^^^^^^^
-tests/models/choices_test.rb:39:33: C: Layout/SpaceAfterComma: Space missing after comma.
-    assert_equal choice.question,question
-                                ^
-tests/models/choices_test.rb:40:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/choices_test.rb:42:4: C: Layout/TrailingEmptyLines: Final newline missing.
-end
-   
-tests/models/outcomes_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-require File.expand_path '../../test_helper.rb', __FILE__
-^
-tests/models/outcomes_test.rb:1:14: C: Style/ExpandPathArguments: Use expand_path('../test_helper.rb', __dir__) instead of expand_path('../../test_helper.rb', __FILE__).
-require File.expand_path '../../test_helper.rb', __FILE__
-             ^^^^^^^^^^^
-tests/models/outcomes_test.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+tests/models/choices_test.rb:27:121: C: Layout/LineLength: Line is too long. [121/120]
+    question = Question.create(name: 'Pregunta 2', description: '¿Te interesa el arte?', number: 2, type: 'preferencias')
+                                                                                                                        ^
+tests/models/choices_test.rb:39:121: C: Layout/LineLength: Line is too long. [123/120]
+    question = Question.create(name: 'Pregunta 3', description: '¿Te interesa el deporte', number: 2, type: 'preferencias')
+                                                                                                                        ^^^
+tests/models/outcomes_test.rb:5:1: C: Style/Documentation: Missing top-level class documentation comment.
 class OutcomeTest < MiniTest::Unit::TestCase
 ^^^^^
-tests/models/outcomes_test.rb:4:19: W: Lint/Void: Variable TestCase used in void context.
+tests/models/outcomes_test.rb:6:19: W: Lint/Void: Variable TestCase used in void context.
   MiniTest::Unit::TestCase
                   ^^^^^^^^
-tests/models/outcomes_test.rb:8:12: C: Layout/SpaceAroundOperators: Surrounding space missing for operator =.
-    outcome= Outcome.create()
-           ^
-tests/models/outcomes_test.rb:8:28: C: Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
-    outcome= Outcome.create()
-                           ^^
-tests/models/outcomes_test.rb:11:32: C: Layout/SpaceAfterComma: Space missing after comma.
-    assert_equal outcome.choice,choice
-                               ^
-tests/models/outcomes_test.rb:12:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/outcomes_test.rb:14:3: C: Layout/EmptyLineBetweenDefs: Use empty lines between method definitions.
-  def test_outcome_has_one_career
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/outcomes_test.rb:17:12: C: Layout/SpaceAroundOperators: Surrounding space missing for operator =.
-    outcome= Outcome.create()
-           ^
-tests/models/outcomes_test.rb:17:28: C: Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
-    outcome= Outcome.create()
-                           ^^
-tests/models/outcomes_test.rb:19:32: C: Layout/SpaceAfterComma: Space missing after comma.
-    assert_equal outcome.career,career
-                               ^
-tests/models/outcomes_test.rb:20:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/outcomes_test.rb:22:4: C: Layout/TrailingEmptyLines: Final newline missing.
-end
-   
-tests/models/questions_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-require File.expand_path '../../test_helper.rb', __FILE__
-^
-tests/models/questions_test.rb:1:14: C: Style/ExpandPathArguments: Use expand_path('../test_helper.rb', __dir__) instead of expand_path('../../test_helper.rb', __FILE__).
-require File.expand_path '../../test_helper.rb', __FILE__
-             ^^^^^^^^^^^
-tests/models/questions_test.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+tests/models/questions_test.rb:5:1: C: Style/Documentation: Missing top-level class documentation comment.
 class QuestionTest < MiniTest::Unit::TestCase
 ^^^^^
-tests/models/questions_test.rb:4:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-   MiniTest::Unit::TestCase
-^^^
-tests/models/questions_test.rb:4:20: W: Lint/Void: Variable TestCase used in void context.
-   MiniTest::Unit::TestCase
-                   ^^^^^^^^
-tests/models/questions_test.rb:6:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-   def test_question_must_have_all_attributes_1
-^^^
-tests/models/questions_test.rb:8:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:13:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:14:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-   def test_question_must_have_all_attributes_2
-^^^
-tests/models/questions_test.rb:16:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:18:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:21:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:22:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-   def test_question_must_have_all_attributes_3
-^^^
-tests/models/questions_test.rb:24:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:25:40: C: Style/Semicolon: Do not use semicolons to terminate expressions.
-     question = Question.new(number: 1);
-                                       ^
-tests/models/questions_test.rb:26:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:29:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:30:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-   def test_question_must_have_all_attributes_4
-^^^
-tests/models/questions_test.rb:32:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:34:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:37:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:38:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-   def test_question_must_have_all_attributes_5
-^^^
-tests/models/questions_test.rb:40:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:42:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:45:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:46:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def test_question_has_many_choices
-^^^^
-tests/models/questions_test.rb:46:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
-    def test_question_has_many_choices ...
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/questions_test.rb:48:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:52:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:54:4: W: Layout/DefEndAlignment: end at 54, 3 is not aligned with def at 46, 4.
-   end
-   ^^^
-tests/models/questions_test.rb:55:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:56:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-   def test_question_has_many_responses
-^^^
-tests/models/questions_test.rb:56:4: C: Metrics/AbcSize: Assignment Branch Condition size for test_question_has_many_responses is too high. [<7, 23, 0> 24.04/17]
-   def test_question_has_many_responses ...
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/questions_test.rb:56:4: C: Metrics/MethodLength: Method has too many lines. [11/10]
-   def test_question_has_many_responses ...
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/questions_test.rb:57:4: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-      clean_database
-   ^^^
-tests/models/questions_test.rb:58:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:59:121: C: Layout/LineLength: Line is too long. [162/120]
-      question = Question.create(name: 'Question about personal preferences', description: 'Breaking Bad or Game of Thrones?', number: 2, type: 'Multiple choice')
-                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/questions_test.rb:62:7: W: Lint/UselessAssignment: Useless assignment to variable - ch3. Did you mean ch4?
-      ch3 = Choice.create(text: 'Both', question_id: question.id)
-      ^^^
-tests/models/questions_test.rb:63:7: W: Lint/UselessAssignment: Useless assignment to variable - ch4. Did you mean ch3?
-      ch4 = Choice.create(text: 'Neither, Vikings', question_id: question.id)
-      ^^^
-tests/models/questions_test.rb:70:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:71:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-   def test_question_number_must_be_unique
-^^^
-tests/models/questions_test.rb:72:4: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
-      clean_database 
-   ^^^
-tests/models/questions_test.rb:72:21: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-      clean_database 
-                    ^
-tests/models/questions_test.rb:73:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/questions_test.rb:75:121: C: Layout/LineLength: Line is too long. [144/120]
-      assert_equal Question.new(name: 'Question for teacher', description: 'Can i go to the bathroom?', number: 3, type: 'YES/NO').valid?, false
-                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^
-tests/models/responses_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-require File.expand_path '../../test_helper.rb', __FILE__
-^
-tests/models/responses_test.rb:1:14: C: Style/ExpandPathArguments: Use expand_path('../test_helper.rb', __dir__) instead of expand_path('../../test_helper.rb', __FILE__).
-require File.expand_path '../../test_helper.rb', __FILE__
-             ^^^^^^^^^^^
-tests/models/responses_test.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+tests/models/questions_test.rb:6:19: W: Lint/Void: Variable TestCase used in void context.
+  MiniTest::Unit::TestCase
+                  ^^^^^^^^
+tests/models/questions_test.rb:58:3: C: Metrics/AbcSize: Assignment Branch Condition size for test_question_has_many_responses is too high. [<7, 23, 0> 24.04/17]
+  def test_question_has_many_responses ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/models/questions_test.rb:58:3: C: Metrics/MethodLength: Method has too many lines. [11/10]
+  def test_question_has_many_responses ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/models/questions_test.rb:61:121: C: Layout/LineLength: Line is too long. [160/120]
+    question = Question.create(name: 'Question about personal preferences', description: 'Breaking Bad or Game of Thrones?', number: 2, type: 'Multiple choice')
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/models/questions_test.rb:64:5: W: Lint/UselessAssignment: Useless assignment to variable - ch3. Did you mean ch4?
+    ch3 = Choice.create(text: 'Both', question_id: question.id)
+    ^^^
+tests/models/questions_test.rb:65:5: W: Lint/UselessAssignment: Useless assignment to variable - ch4. Did you mean ch3?
+    ch4 = Choice.create(text: 'Neither, Vikings', question_id: question.id)
+    ^^^
+tests/models/questions_test.rb:77:121: C: Layout/LineLength: Line is too long. [142/120]
+    assert_equal Question.new(name: 'Question for teacher', description: 'Can i go to the bathroom?', number: 3, type: 'YES/NO').valid?, false
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^
+tests/models/responses_test.rb:5:1: C: Style/Documentation: Missing top-level class documentation comment.
 class ResponsesTest < MiniTest::Unit::TestCase
 ^^^^^
-tests/models/responses_test.rb:4:19: W: Lint/Void: Variable TestCase used in void context.
+tests/models/responses_test.rb:6:19: W: Lint/Void: Variable TestCase used in void context.
   MiniTest::Unit::TestCase
                   ^^^^^^^^
-tests/models/responses_test.rb:8:31: C: Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
-    response = Response.create()
-                              ^^
-tests/models/responses_test.rb:11:35: C: Layout/SpaceAfterComma: Space missing after comma.
-    assert_equal response.question,question
-                                  ^
-tests/models/responses_test.rb:16:31: C: Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
-    response = Response.create()
-                              ^^
-tests/models/responses_test.rb:19:33: C: Layout/SpaceAfterComma: Space missing after comma.
-    assert_equal response.choice,choice
-                                ^
-tests/models/responses_test.rb:24:31: C: Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments.
-    response = Response.create()
-                              ^^
-tests/models/responses_test.rb:27:33: C: Layout/SpaceAfterComma: Space missing after comma.
-    assert_equal response.survey,survey
-                                ^
-tests/models/responses_test.rb:28:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
-tests/models/responses_test.rb:30:4: C: Layout/TrailingEmptyLines: Final newline missing.
-end
-   
-tests/models/surveys_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-require File.expand_path '../../test_helper.rb', __FILE__
-^
-tests/models/surveys_test.rb:1:14: C: Style/ExpandPathArguments: Use expand_path('../test_helper.rb', __dir__) instead of expand_path('../../test_helper.rb', __FILE__).
-require File.expand_path '../../test_helper.rb', __FILE__
-             ^^^^^^^^^^^
-tests/models/surveys_test.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+tests/models/surveys_test.rb:5:1: C: Style/Documentation: Missing top-level class documentation comment.
 class SurveyTest < MiniTest::Unit::TestCase
 ^^^^^
-tests/models/surveys_test.rb:4:19: W: Lint/Void: Variable TestCase used in void context.
+tests/models/surveys_test.rb:6:19: W: Lint/Void: Variable TestCase used in void context.
   MiniTest::Unit::TestCase
                   ^^^^^^^^
-tests/models/surveys_test.rb:34:31: C: Layout/SpaceAfterComma: Space missing after comma.
-    assert_equal survey.career,c
-                              ^
-tests/models/surveys_test.rb:36:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
-tests/models/surveys_test.rb:37:4: C: Layout/TrailingEmptyLines: Final newline missing.
-end
-   
-tests/test_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
-ENV['RACK_ENV'] = 'test'
-^
-tests/test_helper.rb:8:4: C: Layout/FirstArgumentIndentation: Indent the first argument one step more than the start of the previous line.
-   adapter: 'postgres', ...
-   ^^^^^^^^^^^^^^^^^^^^
-tests/test_helper.rb:12:21: C: Layout/MultilineMethodCallBraceLayout: Closing method call brace must be on the line after the last argument when opening brace is on a separate line from the first argument.
-   password: 'magic')
-                    ^
-tests/test_helper.rb:13:1: C: Style/Documentation: Missing top-level class documentation comment.
-class Minitest::HooksSpec
-^^^^^
-tests/test_helper.rb:13:7: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
-class Minitest::HooksSpec
-      ^^^^^^^^^^^^^^^^^^^
-tests/test_helper.rb:15:20: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-    DB.transaction(:rollback=>:always, :auto_savepoint=>true){super}
-                   ^^^^^^^^^^^
-tests/test_helper.rb:15:29: C: Layout/SpaceAroundOperators: Surrounding space missing for operator =>.
-    DB.transaction(:rollback=>:always, :auto_savepoint=>true){super}
-                            ^^
-tests/test_helper.rb:15:40: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
-    DB.transaction(:rollback=>:always, :auto_savepoint=>true){super}
-                                       ^^^^^^^^^^^^^^^^^
-tests/test_helper.rb:15:55: C: Layout/SpaceAroundOperators: Surrounding space missing for operator =>.
-    DB.transaction(:rollback=>:always, :auto_savepoint=>true){super}
-                                                      ^^
-tests/test_helper.rb:15:62: C: Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
-    DB.transaction(:rollback=>:always, :auto_savepoint=>true){super}
-                                                             ^
-tests/test_helper.rb:15:63: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
-    DB.transaction(:rollback=>:always, :auto_savepoint=>true){super}
-                                                              ^
+tests/test_helper.rb:17:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class HooksSpec
+  ^^^^^
+tests/test_helper.rb:19:70: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+      DB.transaction(rollback: :always, auto_savepoint: true) { super}
+                                                                     ^
 
-36 files inspected, 526 offenses detected, 526 offenses auto-correctable
+36 files inspected, 83 offenses detected, 82 offenses auto-correctable
