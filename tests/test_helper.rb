@@ -14,6 +14,7 @@ DB = Sequel.connect(
   password: 'magic'
 )
 module Minitest
+  # Class HooksSpec
   class HooksSpec
     def around
       DB.transaction(rollback: :always, auto_savepoint: true) { super }

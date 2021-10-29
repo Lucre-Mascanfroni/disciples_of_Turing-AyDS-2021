@@ -2,6 +2,7 @@
 
 require File.expand_path '../test_helper.rb', __dir__
 
+# Class ChoiceTest
 class ChoiceTest < MiniTest::Unit::TestCase
   MiniTest::Unit::TestCase
   def test_choice_must_has_text
@@ -13,7 +14,7 @@ class ChoiceTest < MiniTest::Unit::TestCase
 
   def test_choice_has_many_outcomes
     clean_database
-    question = Question.create(name: 'Pregunta 1', description: '¿Cuáles son tus gustos musicales?', number: 1, type: 'preferencias')
+    Question.create(name: 'Pregunta 1', description: '¿Cuáles son tus gustos musicales?', number: 1, type: 'preferencias')
     choice = Choice.create(text: 'estoy de acuerdo')
 
     Outcome.create(choice_id: choice.id)
@@ -24,7 +25,7 @@ class ChoiceTest < MiniTest::Unit::TestCase
 
   def test_choice_has_many_responses
     clean_database
-    question = Question.create(name: 'Pregunta 2', description: '¿Te interesa el arte?', number: 2, type: 'preferencias')
+    Question.create(name: 'Pregunta 2', description: '¿Te interesa el arte?', number: 2, type: 'preferencias')
     choice = Choice.create(text: 'No me interesa')
 
     Response.create(choice_id: choice.id)

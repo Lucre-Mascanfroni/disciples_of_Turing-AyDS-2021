@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Class Response
 class Response < Sequel::Model
   many_to_one     :question
   many_to_one     :survey

@@ -2,6 +2,7 @@
 
 require File.expand_path '../test_helper.rb', __dir__
 
+# Class OutcomeTest
 class OutcomeTest < MiniTest::Unit::TestCase
   MiniTest::Unit::TestCase
 

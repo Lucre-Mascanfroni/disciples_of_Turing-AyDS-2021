@@ -367,18 +367,12 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
       <div class="infobox">
         <div class="total">
           36 files inspected,
-          82 offenses detected:
+          64 offenses detected:
         </div>
         <ul class="offenses-list">
           
             
             
-            <li>
-              <a href="#offense_app.rb">
-                app.rb - 3 offenses
-              </a>
-            </li>
-          
             
             
             
@@ -406,7 +400,7 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             
             <li>
               <a href="#offense_db/seeds.rb">
-                db/seeds.rb - 41 offenses
+                db/seeds.rb - 31 offenses
               </a>
             </li>
           
@@ -464,7 +458,7 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             
             <li>
               <a href="#offense_tests/models/choices_test.rb">
-                tests/models/choices_test.rb - 7 offenses
+                tests/models/choices_test.rb - 4 offenses
               </a>
             </li>
           
@@ -478,7 +472,7 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             
             <li>
               <a href="#offense_tests/models/questions_test.rb">
-                tests/models/questions_test.rb - 8 offenses
+                tests/models/questions_test.rb - 6 offenses
               </a>
             </li>
           
@@ -510,47 +504,6 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
       
       
       
-      
-      <div class="offense-box" id="offense_app.rb">
-        <div class="box-title-placeholder"><h3>&nbsp;</h3></div>
-        <div class="box-title"><h3>app.rb - 3 offenses</h3></div>
-        <div class="offense-reports">
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #5</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Style/Documentation: Missing top-level class documentation comment.</span>
-            </div>
-            
-            <pre><code><span class="highlight convention">class</span> App &lt; Sinatra::Base</code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #23</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [130/120]</span>
-            </div>
-            
-            <pre><code>      @result = Career.find(id: params[:careerId]).number_of_surveys_between_two_dates(params[:initial_date], params[:fi<span class="highlight convention">nal_date])</span></code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #45</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [142/120]</span>
-            </div>
-            
-            <pre><code>    params[:question_id].map { |question_id| Response.create(choice_id: params[question_id], survey_id: survey.id, quest<span class="highlight convention">ion_id: question_id) }</span></code></pre>
-            
-          </div>
-          
-        </div>
-      </div>
       
       
       
@@ -611,7 +564,7 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
       
       <div class="offense-box" id="offense_db/seeds.rb">
         <div class="box-title-placeholder"><h3>&nbsp;</h3></div>
-        <div class="box-title"><h3>db/seeds.rb - 41 offenses</h3></div>
+        <div class="box-title"><h3>db/seeds.rb - 31 offenses</h3></div>
         <div class="offense-reports">
           
           <div class="report">
@@ -629,10 +582,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #30</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [163/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [163/160]</span>
             </div>
             
-            <pre><code>q1 = Question.create(name: &#39;Pregunta 1) &#39;, description: &#39;Me trasladaría a una zona agrícola-ganadera para ejercer mi pro<span class="highlight convention">fesión.&#39;, number: 1, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
+            <pre><code>q1 = Question.create(name: &#39;Pregunta 1) &#39;, description: &#39;Me trasladaría a una zona agrícola-ganadera para ejercer mi profesión.&#39;, number: 1, type: &#39;SINGLE-CHOIC<span class="highlight convention">E&#39;)</span></code></pre>
             
           </div>
           
@@ -651,10 +604,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #36</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [176/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [176/160]</span>
             </div>
             
-            <pre><code>q2 = Question.create(name: &#39;Pregunta 2) &#39;, description: &#39;Tengo buena memoria y no me cuesta estudiar y retener fórmulas <span class="highlight convention">y palabras técnicas.&#39;, number: 2, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
+            <pre><code>q2 = Question.create(name: &#39;Pregunta 2) &#39;, description: &#39;Tengo buena memoria y no me cuesta estudiar y retener fórmulas y palabras técnicas.&#39;, number: 2, type: <span class="highlight convention">&#39;SINGLE-CHOICE&#39;)</span></code></pre>
             
           </div>
           
@@ -673,10 +626,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #44</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [172/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [172/160]</span>
             </div>
             
-            <pre><code>q3 = Question.create(name: &#39;Pregunta 3) &#39;, description: &#39;Me gusta escribir. En general mis trabajos son largos y están b<span class="highlight convention">ien organizados.&#39;, number: 3, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
+            <pre><code>q3 = Question.create(name: &#39;Pregunta 3) &#39;, description: &#39;Me gusta escribir. En general mis trabajos son largos y están bien organizados.&#39;, number: 3, type: &#39;SIN<span class="highlight convention">GLE-CHOICE&#39;)</span></code></pre>
             
           </div>
           
@@ -695,10 +648,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #50</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [161/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [161/160]</span>
             </div>
             
-            <pre><code>q4 = Question.create(name: &#39;Pregunta 4) &#39;, description: &#39;Sé quien es Steven Hawking: Conozco y me atraen sus descubrimie<span class="highlight convention">ntos.&#39;, number: 4, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
+            <pre><code>q4 = Question.create(name: &#39;Pregunta 4) &#39;, description: &#39;Sé quien es Steven Hawking: Conozco y me atraen sus descubrimientos.&#39;, number: 4, type: &#39;SINGLE-CHOICE&#39;<span class="highlight convention">)</span></code></pre>
             
           </div>
           
@@ -717,10 +670,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #55</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [182/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [182/160]</span>
             </div>
             
-            <pre><code>q5 = Question.create(name: &#39;Pregunta 5) &#39;, description: &#39;Me actualizo respecto de los avances tecnológicos y me intereso<span class="highlight convention"> por investigar y conocer.&#39;, number: 5, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
+            <pre><code>q5 = Question.create(name: &#39;Pregunta 5) &#39;, description: &#39;Me actualizo respecto de los avances tecnológicos y me intereso por investigar y conocer.&#39;, number: 5, <span class="highlight convention">type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
             
           </div>
           
@@ -739,10 +692,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #60</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [210/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [210/160]</span>
             </div>
             
-            <pre><code>q6 = Question.create(name: &#39;Pregunta 6) &#39;, description: &#39;Sé quien es Andy Warhol y a qué movimiento artístico pertenece.<span class="highlight convention"> Me apasiona conocer acerca del arte y sus exponentes.&#39;, number: 6, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
+            <pre><code>q6 = Question.create(name: &#39;Pregunta 6) &#39;, description: &#39;Sé quien es Andy Warhol y a qué movimiento artístico pertenece. Me apasiona conocer acerca del arte y s<span class="highlight convention">us exponentes.&#39;, number: 6, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
             
           </div>
           
@@ -761,10 +714,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #65</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [200/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [200/160]</span>
             </div>
             
-            <pre><code>q7 = Question.create(name: &#39;Pregunta 7) &#39;, description: &#39;En general me intereso por las dificultades que ha tenido que a<span class="highlight convention">travesar la humanidad y cómo lo ha superado.&#39;, number: 7, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
+            <pre><code>q7 = Question.create(name: &#39;Pregunta 7) &#39;, description: &#39;En general me intereso por las dificultades que ha tenido que atravesar la humanidad y cómo lo ha super<span class="highlight convention">ado.&#39;, number: 7, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
             
           </div>
           
@@ -783,10 +736,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #70</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [205/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [205/160]</span>
             </div>
             
-            <pre><code>q8 = Question.create(name: &#39;Pregunta 8) &#39;, description: &#39;Me apasiona leer y no me importa si el libro que elijo tiene mu<span class="highlight convention">chas páginas, para mí es un gran entretenimiento.&#39;, number: 8, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
+            <pre><code>q8 = Question.create(name: &#39;Pregunta 8) &#39;, description: &#39;Me apasiona leer y no me importa si el libro que elijo tiene muchas páginas, para mí es un gran entrete<span class="highlight convention">nimiento.&#39;, number: 8, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
             
           </div>
           
@@ -805,10 +758,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #76</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [170/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [170/160]</span>
             </div>
             
-            <pre><code>q9 = Question.create(name: &#39;Pregunta 9) &#39;, description: &#39;Me atrae conocer los procesos y las áreas que hacen funcionar a<span class="highlight convention"> las empresas.&#39;, number: 9, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
+            <pre><code>q9 = Question.create(name: &#39;Pregunta 9) &#39;, description: &#39;Me atrae conocer los procesos y las áreas que hacen funcionar a las empresas.&#39;, number: 9, type: &#39;SINGL<span class="highlight convention">E-CHOICE&#39;)</span></code></pre>
             
           </div>
           
@@ -827,10 +780,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #81</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [172/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [172/160]</span>
             </div>
             
-            <pre><code>q10 = Question.create(name: &#39;Pregunta 10) &#39;, description: &#39;Me siento identificado con el pensamiento de algunos filósofo<span class="highlight convention">s y escritores.&#39;, number: 10, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
+            <pre><code>q10 = Question.create(name: &#39;Pregunta 10) &#39;, description: &#39;Me siento identificado con el pensamiento de algunos filósofos y escritores.&#39;, number: 10, type: &#39;SIN<span class="highlight convention">GLE-CHOICE&#39;)</span></code></pre>
             
           </div>
           
@@ -849,10 +802,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #87</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [193/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [193/160]</span>
             </div>
             
-            <pre><code>q11 = Question.create(name: &#39;Pregunta 11) &#39;, description: &#39;Me encanta estudiar el cuerpo humano y conocer cómo funciona.<span class="highlight convention"> Además, no me impresiona la sangre.&#39;, number: 11, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
+            <pre><code>q11 = Question.create(name: &#39;Pregunta 11) &#39;, description: &#39;Me encanta estudiar el cuerpo humano y conocer cómo funciona. Además, no me impresiona la sangre.&#39;, n<span class="highlight convention">umber: 11, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
             
           </div>
           
@@ -871,10 +824,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #92</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [194/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [194/160]</span>
             </div>
             
-            <pre><code>q12 = Question.create(name: &#39;Pregunta 12) &#39;, description: &#39;Si pudiera elegir, pasaría mucho tiempo diseñando novedosos o<span class="highlight convention">bjetos o edificios en mi computadora.&#39;, number: 12, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
+            <pre><code>q12 = Question.create(name: &#39;Pregunta 12) &#39;, description: &#39;Si pudiera elegir, pasaría mucho tiempo diseñando novedosos objetos o edificios en mi computadora.&#39;, <span class="highlight convention">number: 12, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
             
           </div>
           
@@ -886,50 +839,6 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             </div>
             
             <pre><code><span class="highlight warning">ch2_q12</span> = Choice.create(text: &#39;No&#39;, question: q12)</code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #98</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [143/120]</span>
-            </div>
-            
-            <pre><code>q13 = Question.create(name: &#39;Pregunta 13) &#39;, description: &#39;Si mi blog fuera temático, trataría acerca de: &#39;, number: 13,<span class="highlight convention"> type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #99</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [137/120]</span>
-            </div>
-            
-            <pre><code>ch1_q13 = Choice.create(text: &#39;La importancia de la expresión artística en el desarrollo de la identidad de los pueblos.<span class="highlight convention">&#39;, question: q13)</span></code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #101</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [137/120]</span>
-            </div>
-            
-            <pre><code>ch2_q13 = Choice.create(text: &#39;La arquelogía urbana como forma de aprender acerca de la historia cultural de una ciudad.<span class="highlight convention">&#39;, question: q13)</span></code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #103</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [159/120]</span>
-            </div>
-            
-            <pre><code>ch3_q13 = Choice.create(text: &#39;La tecnología satelital en un proyecto para descubrir actividad volcánica para prevenir c<span class="highlight convention">atástrofes climáticas.&#39;, question: q13)</span></code></pre>
             
           </div>
           
@@ -948,21 +857,10 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             <div class="meta">
               <span class="location">Line #108</span> –
               <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [172/120]</span>
+              <span class="message">Layout/LineLength: Line is too long. [172/160]</span>
             </div>
             
-            <pre><code>q14 = Question.create(name: &#39;Pregunta 14) &#39;, description: &#39;Integraría un equipo de trabajo encargado de producir un audi<span class="highlight convention">ovisual sobre: &#39;, number: 14, type: &#39;SINGLE-CHOICE&#39;)</span></code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #109</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [135/120]</span>
-            </div>
-            
-            <pre><code>ch1_q14 = Choice.create(text: &#39;La práctica de deportes y su influencia positiva en el estado de ánimo de las personas.&#39;,<span class="highlight convention"> question: q14)</span></code></pre>
+            <pre><code>q14 = Question.create(name: &#39;Pregunta 14) &#39;, description: &#39;Integraría un equipo de trabajo encargado de producir un audiovisual sobre: &#39;, number: 14, type: &#39;SIN<span class="highlight convention">GLE-CHOICE&#39;)</span></code></pre>
             
           </div>
           
@@ -979,39 +877,6 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
           
           <div class="report">
             <div class="meta">
-              <span class="location">Line #111</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [123/120]</span>
-            </div>
-            
-            <pre><code>ch2_q14 = Choice.create(text: &#39;Los pensadores del siglo XX y su aporte a la gestión de las organizaciones.&#39;, question: q<span class="highlight convention">14)</span></code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #114</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [127/120]</span>
-            </div>
-            
-            <pre><code>ch3_q14 = Choice.create(text: &#39;Las mascotas y su incidencia en la calidad de vida de las personas no videntes.&#39;, questio<span class="highlight convention">n: q14)</span></code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #116</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [126/120]</span>
-            </div>
-            
-            <pre><code>ch4_q14 = Choice.create(text: &#39;El uso de la PC como herramienta para el control de los procesos industriales.&#39;, question<span class="highlight convention">: q14)</span></code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
               <span class="location">Line #120</span> –
               <span class="severity warning">warning:</span>
               <span class="message">Lint/UselessAssignment: Useless assignment to variable - <code>ch6_q14</code>. Did you mean <code>ch6_q15</code>?</span>
@@ -1023,34 +888,12 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
           
           <div class="report">
             <div class="meta">
-              <span class="location">Line #122</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [130/120]</span>
-            </div>
-            
-            <pre><code>q15 = Question.create(name: &#39;Pregunta 15) &#39;, description: &#39;Sería importante destacarme como: &#39;, number: 15, type: &#39;SINGL<span class="highlight convention">E-CHOICE&#39;)</span></code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
               <span class="location">Line #130</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Naming/VariableName: Use snake_case for variable names.</span>
             </div>
             
             <pre><code>Outcome.create(choice: ch3_q15, career: <span class="highlight convention">educFisica</span>)</code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #133</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [124/120]</span>
-            </div>
-            
-            <pre><code>ch5_q15 = Choice.create(text: &#39;Un agente de prensa audaz, número uno en el ranking de notas a celebridades.&#39;, question: <span class="highlight convention">q15)</span></code></pre>
             
           </div>
           
@@ -1311,7 +1154,7 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
       
       <div class="offense-box" id="offense_tests/models/choices_test.rb">
         <div class="box-title-placeholder"><h3>&nbsp;</h3></div>
-        <div class="box-title"><h3>tests/models/choices_test.rb - 7 offenses</h3></div>
+        <div class="box-title"><h3>tests/models/choices_test.rb - 4 offenses</h3></div>
         <div class="offense-reports">
           
           <div class="report">
@@ -1349,45 +1192,12 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
           
           <div class="report">
             <div class="meta">
-              <span class="location">Line #16</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [133/120]</span>
-            </div>
-            
-            <pre><code>    question = Question.create(name: &#39;Pregunta 1&#39;, description: &#39;¿Cuáles son tus gustos musicales?&#39;, number: 1, type: &#39;p<span class="highlight convention">referencias&#39;)</span></code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
               <span class="location">Line #27</span> –
               <span class="severity warning">warning:</span>
               <span class="message">Lint/UselessAssignment: Useless assignment to variable - <code>question</code>.</span>
             </div>
             
             <pre><code>    <span class="highlight warning">question</span> = Question.create(name: &#39;Pregunta 2&#39;, description: &#39;¿Te interesa el arte?&#39;, number: 2, type: &#39;preferencias&#39;)</code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #27</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [121/120]</span>
-            </div>
-            
-            <pre><code>    question = Question.create(name: &#39;Pregunta 2&#39;, description: &#39;¿Te interesa el arte?&#39;, number: 2, type: &#39;preferencias&#39;<span class="highlight convention">)</span></code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #39</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [123/120]</span>
-            </div>
-            
-            <pre><code>    question = Question.create(name: &#39;Pregunta 3&#39;, description: &#39;¿Te interesa el deporte&#39;, number: 2, type: &#39;preferencia<span class="highlight convention">s&#39;)</span></code></pre>
             
           </div>
           
@@ -1430,7 +1240,7 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
       
       <div class="offense-box" id="offense_tests/models/questions_test.rb">
         <div class="box-title-placeholder"><h3>&nbsp;</h3></div>
-        <div class="box-title"><h3>tests/models/questions_test.rb - 8 offenses</h3></div>
+        <div class="box-title"><h3>tests/models/questions_test.rb - 6 offenses</h3></div>
         <div class="offense-reports">
           
           <div class="report">
@@ -1479,17 +1289,6 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
           
           <div class="report">
             <div class="meta">
-              <span class="location">Line #61</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [160/120]</span>
-            </div>
-            
-            <pre><code>    question = Question.create(name: &#39;Question about personal preferences&#39;, description: &#39;Breaking Bad or Game of Throne<span class="highlight convention">s?&#39;, number: 2, type: &#39;Multiple choice&#39;)</span></code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
               <span class="location">Line #64</span> –
               <span class="severity warning">warning:</span>
               <span class="message">Lint/UselessAssignment: Useless assignment to variable - <code>ch3</code>. Did you mean <code>ch4</code>?</span>
@@ -1507,17 +1306,6 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
             </div>
             
             <pre><code>    <span class="highlight warning">ch4</span> = Choice.create(text: &#39;Neither, Vikings&#39;, question_id: question.id)</code></pre>
-            
-          </div>
-          
-          <div class="report">
-            <div class="meta">
-              <span class="location">Line #77</span> –
-              <span class="severity convention">convention:</span>
-              <span class="message">Layout/LineLength: Line is too long. [142/120]</span>
-            </div>
-            
-            <pre><code>    assert_equal Question.new(name: &#39;Question for teacher&#39;, description: &#39;Can i go to the bathroom?&#39;, number: 3, type: &#39;<span class="highlight convention">YES/NO&#39;).valid?, false</span></code></pre>
             
           </div>
           

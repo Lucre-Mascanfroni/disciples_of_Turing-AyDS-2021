@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Class Choice
 class Choice < Sequel::Model
   plugin :validation_helpers
   many_to_one :question

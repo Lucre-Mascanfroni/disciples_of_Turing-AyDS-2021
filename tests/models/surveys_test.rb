@@ -2,6 +2,7 @@
 
 require File.expand_path '../test_helper.rb', __dir__
 
+# Class SurveyTest
 class SurveyTest < MiniTest::Unit::TestCase
   MiniTest::Unit::TestCase
   def test_survey_name_must_not_be_empty

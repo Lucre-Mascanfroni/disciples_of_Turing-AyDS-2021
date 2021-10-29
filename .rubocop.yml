@@ -1,0 +1,16 @@
+inherit_from: ../.rubocop.yml
+
+Style/Encoding:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 300
+
+Metrics/AbcSize:
+  AutoCorrect: true
+
+Lint/Void:
+  AutoCorrect: true
+
+Style/Documentation:
+  AutoCorrect: true

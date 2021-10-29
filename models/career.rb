@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Class Career
 class Career < Sequel::Model
   plugin :validation_helpers
   one_to_many :outcomes
@@ -13,7 +14,7 @@ class Career < Sequel::Model
     result = {}
     if the_dates_are_valid?(initial_date, final_date)
       result = { 'name' => name, 'number' => 0 }
-      surveys.map { |survey| survey.is_created_at_between(initial_date, final_date) && result['number'] += 1 }
+      surveys.map { |survey| survey.created_at_between?(initial_date, final_date) && result['number'] += 1 }
     end
     result
   end

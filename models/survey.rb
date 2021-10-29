@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Class Survey
 class Survey < Sequel::Model
   plugin :validation_helpers
   one_to_many    :responses
@@ -21,7 +22,7 @@ class Survey < Sequel::Model
     career_weights
   end
 
-  def is_created_at_between(initial_date, final_date)
+  def created_at_between?(initial_date, final_date)
     Time.parse(initial_date.to_s) <= created_at && created_at <= Time.parse(final_date.to_s)
   end
 end

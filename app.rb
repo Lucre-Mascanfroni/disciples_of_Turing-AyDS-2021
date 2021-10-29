@@ -2,6 +2,7 @@
 
 require './models/init.rb'
 
+# Endpoint of the app
 class App < Sinatra::Base
   # GET method of root
   get '/' do
@@ -19,9 +20,7 @@ class App < Sinatra::Base
   # GET methods all surveys given id of the career and two dates.
   get '/surveys' do
     @result = {}
-    if params[:careerId] && params[:initial_date] && params[:final_date]
-      @result = Career.find(id: params[:careerId]).number_of_surveys_between_two_dates(params[:initial_date], params[:final_date])
-    end
+    @result = Career.find(id: params[:careerId]).number_of_surveys_between_two_dates(params[:initial_date], params[:final_date]) if params[:careerId] && params[:initial_date] && params[:final_date]
     @careers = Career.all
     erb :number_of_surveys_between_two_dates
   end

@@ -2,6 +2,7 @@
 
 require File.expand_path '../test_helper.rb', __dir__
 
+# Class QuestionTest
 class QuestionTest < MiniTest::Unit::TestCase
   MiniTest::Unit::TestCase
 
@@ -59,14 +60,9 @@ class QuestionTest < MiniTest::Unit::TestCase
     clean_database
 
     question = Question.create(name: 'Question about personal preferences', description: 'Breaking Bad or Game of Thrones?', number: 2, type: 'Multiple choice')
-    ch1 = Choice.create(text: 'Breaking Bad', question_id: question.id)
-    ch2 = Choice.create(text: 'Game of Thrones', question_id: question.id)
-    ch3 = Choice.create(text: 'Both', question_id: question.id)
-    ch4 = Choice.create(text: 'Neither, Vikings', question_id: question.id)
-    s1 = Survey.create(name: 'Axel')
-    s2 = Survey.create(name: 'Tereza')
-    Response.create(question_id: question.id, choice_id: ch1.id, survey_id: s1.id)
-    Response.create(question_id: question.id, choice_id: ch2.id, survey_id: s2.id)
+    choices = { 'ch1' => Choice.create(text: 'Breaking Bad'), 'ch2' => Choice.create(text: 'Game of Thrones') }
+    Response.create(question_id: question.id, choice_id: choices['ch1'].id)
+    Response.create(question_id: question.id, choice_id: choices['ch2'].id)
     assert_equal question.responses.count, 2
   end
 
