@@ -25,10 +25,10 @@ class CareerTest < MiniTest::Unit::TestCase
   def test_method_number_of_surveys_between_two_dates
     clean_database
     career = Career.create(name: 'Microbiología')
-    Survey.create(name: 'U1', career_id: career.id, created_at: Time.parse('2021-10-11'))
-    Survey.create(name: 'U2', career_id: career.id, created_at: Time.parse('2021-10-19'))
-    initial_date = '2021-10-11'
-    final_date = '2021-10-19'
+    Survey.create(name: 'U1', career_id: career.id, created_at: Time.parse('2021-10-11 00:00:00'))
+    Survey.create(name: 'U2', career_id: career.id, created_at: Time.parse('2021-10-19 23:59:59'))
+    initial_date = '2021-10-11 00:00:00'
+    final_date = '2021-10-19 23:59:59'
     result = career.number_of_surveys_between_two_dates(initial_date, final_date)['number']
     assert_equal result, 2
   end

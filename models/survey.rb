@@ -23,6 +23,6 @@ class Survey < Sequel::Model
   end
 
   def created_at_between?(initial_date, final_date)
-    Time.parse(initial_date.to_s) <= created_at && created_at <= Time.parse(final_date.to_s)
+    Time.parse(initial_date.to_s + " 00:00:00") <= created_at && created_at <= Time.parse(final_date.to_s + " 23:59:59")
   end
 end
