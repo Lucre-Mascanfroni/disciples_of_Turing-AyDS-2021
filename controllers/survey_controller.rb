@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'sinatra/base'
 
+# Class SurveyController
 class SurveyController < Sinatra::Base
-
   configure :development, :production do
     set :views, settings.root + '/../views'
   end
@@ -37,5 +39,4 @@ class SurveyController < Sinatra::Base
     erb :outcome_index
   end
   # End of POST method of responses
-
 end
