@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 require './models/init.rb'
-require './controllers/CareerController.rb'
-require './controllers/SurveyController.rb'
-
+require './controllers/career_controller.rb'
+require './controllers/survey_controller.rb'
 
 # Endpoint of the app
 class App < Sinatra::Base
-
   use CareerController
   use SurveyController
 
@@ -16,6 +14,4 @@ class App < Sinatra::Base
     erb :landing
   end
   # End of GET method of root
-  
 end
-
