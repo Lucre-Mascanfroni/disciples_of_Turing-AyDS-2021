@@ -1,16 +1,11 @@
-# frozen_string_literal: true
+require 'sinatra/base'
 
-require './models/init.rb'
+class SurveyController < Sinatra::Base
 
-# Endpoint of the app
-class App < Sinatra::Base
-  # GET method of root
-  get '/' do
-    erb :landing
+  configure :development, :production do
+    set :views, settings.root + '/../views'
   end
-  # End of GET method of root
 
-  
   # GET methods all surveys given id of the career and two dates.
   get '/surveys' do
     @result = {}
@@ -42,4 +37,5 @@ class App < Sinatra::Base
     erb :outcome_index
   end
   # End of POST method of responses
+
 end
