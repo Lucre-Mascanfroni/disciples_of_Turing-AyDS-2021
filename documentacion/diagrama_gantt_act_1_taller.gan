@@ -4,6 +4,7 @@
         <field id="tpd3" name="Nombre" width="166" order="0"/>
         <field id="tpd4" name="Fecha de inicio" width="64" order="1"/>
         <field id="tpd5" name="Fecha de fin" width="64" order="2"/>
+        <option id="taskLabelRight" value="name"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Nombre" width="209" order="0"/>
@@ -33,12 +34,12 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="refactorizacion de codigo" color="#8cb6ce" meeting="false" start="2021-09-02" duration="4" complete="0" thirdDate="2021-09-02" thirdDate-constraint="0" expand="true">
+        <task id="0" name="Refactorización de código" color="#8cb6ce" meeting="false" start="2021-09-02" duration="4" complete="0" thirdDate="2021-09-02" thirdDate-constraint="0" expand="true">
             <depend id="1" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="1" name="diseño e implementacion de tests" color="#8cb6ce" meeting="false" start="2021-09-08" duration="4" complete="0" thirdDate="2021-09-02" thirdDate-constraint="0" expand="true"/>
-        <task id="2" name="mejorar la interface de la pagina" color="#8cb6ce" meeting="false" start="2021-09-02" duration="6" complete="0" thirdDate="2021-09-02" thirdDate-constraint="0" expand="true"/>
-        <task id="3" name="agregar documentacion" color="#8cb6ce" meeting="false" start="2021-09-02" duration="8" complete="0" thirdDate="2021-09-02" thirdDate-constraint="0" expand="true"/>
+        <task id="1" name="Diseño e implementación de tests" color="#8cb6ce" meeting="false" start="2021-09-08" duration="4" complete="0" thirdDate="2021-09-02" thirdDate-constraint="0" expand="true"/>
+        <task id="2" name="Mejorar la interface de la página" color="#8cb6ce" meeting="false" start="2021-09-02" duration="6" complete="0" thirdDate="2021-09-02" thirdDate-constraint="0" expand="true"/>
+        <task id="3" name="Agregar documentación" color="#8cb6ce" meeting="false" start="2021-09-02" duration="8" complete="0" thirdDate="2021-09-02" thirdDate-constraint="0" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="Lucrecia" function="Default:0" contacts="" phone=""/>
